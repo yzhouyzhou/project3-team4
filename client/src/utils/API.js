@@ -2,19 +2,46 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  getBooks: function() {
+  getBooks: function () {
     return axios.get("/api/books");
   },
   // Gets the book with the given id
-  getBook: function(id) {
+  getBook: function (id) {
     return axios.get("/api/books/" + id);
   },
   // Deletes the book with the given id
-  deleteBook: function(id) {
+  deleteBook: function (id) {
     return axios.delete("/api/books/" + id);
   },
   // Saves a book to the database
-  saveBook: function(bookData) {
+  saveBook: function (bookData) {
     return axios.post("/api/books", bookData);
+  },
+
+  getPatients: function () {
+    return axios.get("/api/patients");
+  },
+  // Gets the book with the given id
+  getPatient: function (id) {
+    return axios.get("/api/patients/" + id);
+  },
+
+  getPatientByEmail: function (emailData) {
+    console.log(emailData);
+    return axios.get("/api/patients/", emailData);
+  },
+  // Deletes the book with the given id
+  // deleteBook: function(id) {
+  //   return axios.delete("/api/books/" + id);
+  // },
+  // Saves a book to the database
+  savePatient: function (patientData) {
+    console.log("here", patientData);
+    return axios.post("/api/patients", patientData);
+  },
+
+  savePatientChat: function (patientChatData) {
+    console.log("chat here ", patientChatData);
+    return axios.post("/api/lifechathistory", patientChatData);
   }
 };
