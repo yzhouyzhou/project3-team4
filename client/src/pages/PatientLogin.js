@@ -67,13 +67,13 @@ class PatientLogin extends Component {
             </Jumbotron>
             {this.state.patient ? (
               <strong>
-                {this.state.patient._id} + " "
-                {this.state.patient.name} + " "
-                {this.state.patient.password} + " "
-                {this.state.patient.email} + " "
-                {this.state.patient.ssn} + " "
-                {this.state.patient.primaryDrInfo} + " "
-                {this.state.patient.insuranceInfo} + " "
+                {this.state.patient._id}
+                {this.state.patient.name}  
+                {this.state.patient.password}  
+                {this.state.patient.email}  
+                {this.state.patient.ssn}  
+                {this.state.patient.primaryDrInfo}  
+                {this.state.patient.insuranceInfo}  
                 {this.state.patient.lifechathistory ? (this.state.patient.lifechathistory.length ?
                   this.state.patient.lifechathistory.map(chat =>
                     chat.chathistory + " ") : "")
