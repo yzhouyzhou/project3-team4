@@ -54,7 +54,7 @@ var PatientSchema = new Schema({
   // This allows us to populate the Article with an associated Note
   lifechathistory: [{
     type: Schema.Types.ObjectId,
-    ref: "Lifechathistory"
+    ref: "lifechathistory"
   }]
 });
 

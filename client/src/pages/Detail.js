@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { TextArea, FormBtn } from "../components/Form";
 
 class Detail extends Component {
   state = {
@@ -57,7 +56,10 @@ class Detail extends Component {
                 {this.state.patient.name} | {this.state.patient.phone} | {this.state.patient.primaryDrInfo} | {this.state.patient.insuranceInfo}
               </p>
               <p>
-                {this.state.patient.lifechathistory}
+                {this.state.patient.lifechathistory ? (this.state.patient.lifechathistory.length ?
+                  this.state.patient.lifechathistory.map(chat =>
+                    chat.chathistory + " ") : "")
+                  : ""}
               </p>
             </article>
           </Col>
@@ -72,7 +74,6 @@ class Detail extends Component {
                 placeholder="Chat"
               />
               <FormBtn
-                // disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Send

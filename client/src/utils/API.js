@@ -19,22 +19,19 @@ export default {
   },
 
   getPatients: function () {
-    return axios.get("/api/patients");
+    console.log("hello");
+    return axios.get("/api/patients/all");
   },
-  // Gets the book with the given id
+  // Gets the patient with the given id
   getPatient: function (id) {
     return axios.get("/api/patients/" + id);
   },
-
+  // Gets the patient with the given email
   getPatientByEmail: function (emailData) {
-    console.log(emailData);
-    return axios.get("/api/patients/", emailData);
+    console.log("login email", emailData);
+    return axios.get("/api/patients", { params: { email:  emailData} });
   },
-  // Deletes the book with the given id
-  // deleteBook: function(id) {
-  //   return axios.delete("/api/books/" + id);
-  // },
-  // Saves a book to the database
+
   savePatient: function (patientData) {
     console.log("here", patientData);
     return axios.post("/api/patients", patientData);
