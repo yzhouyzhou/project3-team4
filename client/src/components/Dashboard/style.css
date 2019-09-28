@@ -1,0 +1,81 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    display: block;
+    z-index: 1;
+    color: #fff;
+    font-weight: 200;
+    background-color:rgb(73, 77, 97);
+    /* background-size: cover;
+    background-position: center center; */
+}
+
+.footer{
+    background-color: darkblue;
+    color: #ffe066;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 3px;
+    text-shadow: -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
+    border-top: 6px solid black;
+    }
+
+.topBar{
+    background-color:rgb(73, 77, 97);
+}
+
+.navItem{
+    margin: 0;
+      line-height: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase; 
+}
+/* .sidebar .sidebar-wrapper {
+        position: relative;
+        height: calc(100vh - 75px);
+        overflow: auto;
+        width: 260px;
+        z-index: 4;
+        padding-bottom: 30px; }
+      .sidebar .sidebar-background {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        display: block;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center center; } */
+.logo {
+    padding: 10px 70px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 4;
+}
+
+.logo span {
+    float: left;
+    font-size: 30px;
+    margin: 5px 10px;
+    color: #FFFFFF;
+    line-height: 20px;
+    display: block;
+    font-weight:bold;
+    letter-spacing: 4px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* .sidebar .logo .logo-img {
+          width: 34px;
+          display: inline-block;
+          height: 34px;
+          margin-left: -2px;
+          margin-top: -2px;
+          margin-right: 10px;
+          border-radius: 30px;
+          text-align: center; }
+       */
