@@ -9,6 +9,12 @@ import PatientList from "./pages/PatientList";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Maps from "../src/components/GoogleMap";
+import Customer from './Customer';
+import Support from './Support';
+import './normalize.css';
+    import './skeleton.css';
+
+import './App.css';
 
 function App() {
   return (
@@ -22,6 +28,8 @@ function App() {
           <Route exact path="/patients/:id" component={Detail} />	
           <Route exact path="/" component={PatientLogin} />
           <Route exact path="/location" component={Maps} />
+          <Route exact path="/livechat" render={() => <Customer />} />
+        <Route exact path="/support" render={() => <Support />} />
           <Route component={NoMatch} />
         </Switch>
       </div>
