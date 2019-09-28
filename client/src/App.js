@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/Dashboard/dashboard";
 import './index.css';
 import Patients from "./pages/Patients";
 import PatientLogin from "./pages/PatientLogin";
