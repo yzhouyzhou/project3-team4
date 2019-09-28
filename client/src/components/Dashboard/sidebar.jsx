@@ -18,25 +18,29 @@ import PlaceIcon from '@material-ui/icons/Place';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import AssignmentIcon from '@material-ui/icons/Assignment';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "./style.css";
 
 export const mainListItems = (
   <div>
-    <ListItem button>
+    
+    <ListItem button >
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <NavLink to="/welcome" style={{ textDecoration: 'none', color: 'white' }}
+      activeStyle={{ color: 'cyan'}}>
+        <ListItemText primary="Dashboard"/>
+        </NavLink>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <FaceIcon />
       </ListItemIcon>
-      <Link to="/patients"
-      activeStyle={{ color: 'blue' }}>
+      <NavLink to="/patients" style={{ textDecoration: 'none', color: 'white' }}
+      activeStyle={{ color: 'cyan'}}>
         <ListItemText primary="User Profile"/>
-        </Link>
+        </NavLink>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
@@ -48,7 +52,10 @@ export const mainListItems = (
       <ListItemIcon>
         <LocalHospitalIcon />
       </ListItemIcon>
-      <ListItemText primary="Emergency" />
+      <NavLink to="/emergency" style={{ textDecoration: 'none', color: 'white' }}
+      activeStyle={{ color: 'cyan'}}>
+        <ListItemText primary="Emergency"/>
+        </NavLink>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
@@ -66,7 +73,10 @@ export const mainListItems = (
       <ListItemIcon>
         <AddAlertIcon />
       </ListItemIcon>
-      <ListItemText primary="Notifications" />
+      <NavLink to="/notifications" style={{ textDecoration: 'none', color: 'white' }}
+      activeStyle={{ color: 'cyan'}}>
+        <ListItemText primary="Notifications"/>
+        </NavLink>
     </ListItem>
   </div>
 );
