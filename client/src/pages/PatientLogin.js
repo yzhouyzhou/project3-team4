@@ -1,33 +1,25 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 
 class PatientLogin extends Component {
   state = {
-    patients: [],
+    patient: {},
     email: "",
     password: ""
   };
 
-  
-  // loadPatientByEmail = () => {
-  //   API.getPatientByEmail(this.state.email)
-  //     .then(res =>
-  //       this.setState({ patient: res.data[0], email: "" })
-  //     )
-  //     .catch(err => console.log(err));
-  // };
-
-  // deleteBook = id => {
-  //   API.deleteBook(id)
-  //     .then(res => this.loadBooks())
-  //     .catch(err => console.log(err));
-  // };
+  loadPatientByEmail = () => {
+    API.getPatientByEmail(this.state.email)
+      .then(res => {
+        console.log(res.data);
+        this.setState({ patient: res.data });
+        console.log("now", this.state.patient);
+      })
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -38,10 +30,7 @@ class PatientLogin extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getPatientByEmail({
-      email:this.state.email})
-      .then(res => this.setState({ patients: res.data }))
-      .catch(err => console.log(err));
+    this.loadPatientByEmail();
   };
 
   render() {
@@ -66,7 +55,6 @@ class PatientLogin extends Component {
                 placeholder="Password (required)"
               />
               <FormBtn
-                // disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 login
@@ -75,22 +63,22 @@ class PatientLogin extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Patient Information</h1>
+              <h1>Patient Information {this.state.patient.name}</h1>
             </Jumbotron>
-            {this.state.patients.length ? (
-              <List>
-                {this.state.patients.map(patient => (
-                  <ListItem key={patient._id}>
-                    <Link to={"/patients/" + patient._id}>
-                      <strong>
-                        {patient._id} | {patient.name} | {patient.password} | {patient.email} |{patient.ssn} | {patient.primaryDrInfo} | {patient.insuranceInfo} |
-                      </strong>
-                      {patient.lifechathistory}
-                    </Link>
-                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
-                  </ListItem>
-                ))}
-              </List>
+            {this.state.patient ? (
+              <strong>
+                {this.state.patient._id}
+                {this.state.patient.name}  
+                {this.state.patient.password}  
+                {this.state.patient.email}  
+                {this.state.patient.ssn}  
+                {this.state.patient.primaryDrInfo}  
+                {this.state.patient.insuranceInfo}  
+                {this.state.patient.lifechathistory ? (this.state.patient.lifechathistory.length ?
+                  this.state.patient.lifechathistory.map(chat =>
+                    chat.chathistory + " ") : "")
+                  : ""}
+              </strong>
             ) : (
                 <h3>No Patients to Display</h3>
               )}

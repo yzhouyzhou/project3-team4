@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new NoteSchema object
 // This is similar to a Sequelize model
-var LifechathistorySchema = new Schema({
+var lifechathistorySchema = new Schema({
   // `title` is of type String
   date: { type: Date, default: Date.now },
   // `body` is of type String
@@ -14,7 +14,7 @@ var LifechathistorySchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Lifechathistory = mongoose.model("Lifechathistory", LifechathistorySchema);
+var lifechathistory = mongoose.model("lifechathistory", lifechathistorySchema);
 
 // Export the Note model
-module.exports = Lifechathistory;
+module.exports = lifechathistory;

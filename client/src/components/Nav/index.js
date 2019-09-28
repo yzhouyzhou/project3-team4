@@ -12,6 +12,9 @@ function Nav() {
       <a className="navbar-brand" href="/Patients" >
         Register
         </a>
+      <a className="navbar-brand" href="/Patients/all" >
+        PatientList
+        </a>
     </nav>
   );
 }

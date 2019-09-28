@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 
 class Patients extends Component {
   state = {
@@ -31,12 +30,6 @@ class Patients extends Component {
       )
       .catch(err => console.log(err));
   };
-
-  // deleteBook = id => {
-  //   API.deleteBook(id)
-  //     .then(res => this.loadBooks())
-  //     .catch(err => console.log(err));
-  // };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -121,7 +114,6 @@ class Patients extends Component {
                 placeholder="insuranceInfo"
               />
               <FormBtn
-                // disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Register
@@ -138,11 +130,11 @@ class Patients extends Component {
                   <ListItem key={patient._id}>
                     <Link to={"/patients/" + patient._id}>
                       <strong>
-                        {patient._id} | {patient.name} | {patient.password} | {patient.email} |{patient.ssn} | {patient.primaryDrInfo} | {patient.insuranceInfo} |
+                        {patient._id} | {patient.name} | {patient.password} |
+                        {patient.email} |{patient.ssn} | {patient.primaryDrInfo} |
+                        {patient.insuranceInfo} |
                       </strong>
-                      {patient.lifechathistory}
                     </Link>
-                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
                   </ListItem>
                 ))}
               </List>
