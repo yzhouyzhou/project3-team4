@@ -20,6 +20,7 @@ function App() {
         <Dashboard/>
         <Switch>
           <Route exact path="/patients" component={Patients} />
+          
           <Route exact path="/patients/all" component={PatientList} />
           <Route exact path="/patients/:id" component={Detail} />
           <Route exact path="/welcome" component={Welcome} />

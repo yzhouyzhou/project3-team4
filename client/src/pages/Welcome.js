@@ -6,6 +6,7 @@ function Welcome() {
   return (
     <Container fluid>
       <Row>
+        
         <Col size="md-12">
           <Jumbotron>
             <h1>Welcome</h1>

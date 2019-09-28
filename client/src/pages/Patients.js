@@ -122,6 +122,7 @@ class Patients extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
+              
               <h1>Patients On My List</h1>
             </Jumbotron>
             {this.state.patients.length ? (

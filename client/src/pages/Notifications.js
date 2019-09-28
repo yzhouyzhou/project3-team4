@@ -4,6 +4,7 @@ import Jumbotron from "../components/Jumbotron";
 
 function Notifications() {
   return (
+    
     <Container fluid>
       <Row>
         <Col size="md-12">
