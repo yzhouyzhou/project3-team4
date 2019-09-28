@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   findAll: function (req, res) {
-    db.Lifechathistory
+    db.lifechathistory
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
@@ -25,7 +25,7 @@ module.exports = {
   },
   create: function (req, res) {
     console.log("create chat for user ", req.body);
-    db.Lifechathistory
+    db.lifechathistory
       .create(req.body)
       .then(dbChat => {
         console.log("dbchat ", dbChat);
