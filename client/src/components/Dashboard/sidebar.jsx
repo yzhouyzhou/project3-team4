@@ -18,6 +18,7 @@ import PlaceIcon from '@material-ui/icons/Place';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import { Link } from 'react-router-dom';
 import "./style.css";
 
 export const mainListItems = (
@@ -32,7 +33,10 @@ export const mainListItems = (
       <ListItemIcon>
         <FaceIcon />
       </ListItemIcon>
-      <ListItemText primary="User Profile" />
+      <Link to="/patients"
+      activeStyle={{ color: 'blue' }}>
+        <ListItemText primary="User Profile"/>
+        </Link>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
