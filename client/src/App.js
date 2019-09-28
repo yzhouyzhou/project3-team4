@@ -15,6 +15,10 @@ function App() {
       <div>
         <Nav />
         <Switch>
+          <Route exact path="/patients" component={Patients} />	          <Route exact path="/location" component={Maps} />
+          <Route exact path="/patients/all" component={PatientList} />	
+          <Route exact path="/patients/:id" component={Detail} />	
+          <Route exact path="/" component={PatientLogin} />
           <Route exact path="/location" component={Maps} />
           <Route component={NoMatch} />
         </Switch>
