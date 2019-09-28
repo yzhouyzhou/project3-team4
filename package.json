@@ -29,15 +29,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adi868/APIK-TEST.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adi868/APIK-TEST/issues"
-  },
-  "homepage": "https://github.com/adi868/APIK-TEST#readme"
-}
+  "license": "ISC"
+  }
