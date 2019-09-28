@@ -11,6 +11,7 @@ import Welcome from "./pages/Welcome";
 import HomepageLogin from "./pages/Homepage";
 import Notifications from "./pages/Notifications";
 import NoMatch from "./pages/NoMatch";
+import Maps from "../src/components/GoogleMap";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Nav />
         <Dashboard/>
         <Switch>
+
           <Route exact path="/patients" component={Patients} />
           
           <Route exact path="/patients/all" component={PatientList} />
@@ -27,6 +29,9 @@ function App() {
           <Route exact path="/notifications" component={Notifications} />
           <Route exact path="/" component={HomepageLogin} />
           {/* <Route exact path="/" component={PatientLogin} /> */}
+ <Route exact path="/location" component={Maps} />
+           
+
           <Route component={NoMatch} />
         </Switch>
       </div>
