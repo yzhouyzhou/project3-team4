@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Dashboard from "./components/Dashboard/dashboard";
 import './index.css';
 import Patients from "./pages/Patients";
+import Wrapper from "./components/Wrapper";
 // import PatientLogin from "./pages/PatientLogin";
 import PatientList from "./pages/PatientList";
 import Detail from "./pages/Detail";
@@ -19,21 +20,19 @@ function App() {
       <div>
         <Nav />
         <Dashboard/>
+        <Wrapper>
         <Switch>
-
           <Route exact path="/patients" component={Patients} />
-          
           <Route exact path="/patients/all" component={PatientList} />
           <Route exact path="/patients/:id" component={Detail} />
           <Route exact path="/welcome" component={Welcome} />
           <Route exact path="/notifications" component={Notifications} />
           <Route exact path="/" component={HomepageLogin} />
           {/* <Route exact path="/" component={PatientLogin} /> */}
- <Route exact path="/location" component={Maps} />
-           
-
+          <Route exact path="/location" component={Maps} />
           <Route component={NoMatch} />
         </Switch>
+        </Wrapper>
       </div>
     </Router>
   );

@@ -61,7 +61,10 @@ export const mainListItems = (
       <ListItemIcon>
         <PlaceIcon />
       </ListItemIcon>
-      <ListItemText primary="Location" />
+      <NavLink to="/location" style={{ textDecoration: 'none', color: 'white' }}
+      activeStyle={{ color: 'cyan'}}>
+        <ListItemText primary="Location"/>
+        </NavLink>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
