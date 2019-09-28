@@ -1,0 +1,8 @@
+.footer{
+    background-color: darkblue;
+    color: #ffe066;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 3px;
+    text-shadow: -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
+    border-top: 6px solid black;
+    }
