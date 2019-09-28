@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
-
+import Dashboard from "./components/Dashboard/dashboard";
+import './index.css';
 import Patients from "./pages/Patients";
 import PatientLogin from "./pages/PatientLogin";
 import PatientList from "./pages/PatientList";
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <div>
         <Nav />
+        <Dashboard/>
         <Switch>
           <Route exact path="/location" component={Maps} />
           <Route component={NoMatch} />
