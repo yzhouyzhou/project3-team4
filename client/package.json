@@ -14,7 +14,6 @@
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
     "bloomer": "^0.6.5",
-    "bootstrap": "^4.3.1",
     "express": "^4.17.1",
     "google-map-react": "^1.1.5",
     "if-env": "^1.0.4",
@@ -23,7 +22,6 @@
     "react": "^16.6.3",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
-    "react-router-dom": "^5.1.1",
     "react-scripts": "3.1.2",
     "react-spinkit": "^3.0.0",
     "react-spring": "^8.0.27",
@@ -39,22 +37,22 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "loader": "css-loader",
+  "options": {
+    "minimize": false
+  },
+  "browserslist": {
+    "production": [
+      "defaults",
+      "not op_mini all",
+      "last 1 version",
+      "> 1%"
+    ]
+  }
 }

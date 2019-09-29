@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
+import Dashboard from "../components/Dashboard/dashboard";
+import Wrapper from "../components/Wrapper";
 
 class Patients extends Component {
   state = {
@@ -58,93 +60,93 @@ class Patients extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>Register?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.name}
-                onChange={this.handleInputChange}
-                name="name"
-                placeholder="Name (required)"
-              />
-              <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="Email (required)"
-              />
-              <Input
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                name="password"
-                placeholder="Password (required)"
-              />
-              <Input
-                value={this.state.phone}
-                onChange={this.handleInputChange}
-                name="phone"
-                placeholder="phone"
-              />
-              <Input
-                value={this.state.address}
-                onChange={this.handleInputChange}
-                name="address"
-                placeholder="address"
-              />
-              <Input
-                value={this.state.ssn}
-                onChange={this.handleInputChange}
-                name="ssn"
-                placeholder="SSN"
-              />
-              <Input
-                value={this.state.primaryDrInfo}
-                onChange={this.handleInputChange}
-                name="primaryDrInfo"
-                placeholder="primaryDrInfo"
-              />
-              <Input
-                value={this.state.insuranceInfo}
-                onChange={this.handleInputChange}
-                name="insuranceInfo"
-                placeholder="insuranceInfo"
-              />
-              <FormBtn
-                onClick={this.handleFormSubmit}
-              >
-                Register
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              
-              <h1>Patients On My List</h1>
-            </Jumbotron>
-            {this.state.patients.length ? (
-              <List>
-                {this.state.patients.map(patient => (
-                  <ListItem key={patient._id}>
-                    <Link to={"/patients/" + patient._id}>
-                      <strong>
-                        {patient._id} | {patient.name} | {patient.password} |
-                        {patient.email} |{patient.ssn} | {patient.primaryDrInfo} |
-                        {patient.insuranceInfo} |
-                      </strong>
-                    </Link>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
+      <div>
+        <Dashboard></Dashboard>
+        <Wrapper>
+        <Container fluid>
+          <Row>
+            <Col size="md-6">
+              <Jumbotron>
+                <h1>Register?</h1>
+              </Jumbotron>
+              <form>
+                <Input
+                  value={this.state.name}
+                  onChange={this.handleInputChange}
+                  name="name"
+                  placeholder="Name (required)"
+                />
+                <Input
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                  name="email"
+                  placeholder="Email (required)"
+                />
+                <Input
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                  name="password"
+                  placeholder="Password (required)"
+                />
+                <Input
+                  value={this.state.phone}
+                  onChange={this.handleInputChange}
+                  name="phone"
+                  placeholder="phone"
+                />
+                <Input
+                  value={this.state.address}
+                  onChange={this.handleInputChange}
+                  name="address"
+                  placeholder="address"
+                />
+                <Input
+                  value={this.state.ssn}
+                  onChange={this.handleInputChange}
+                  name="ssn"
+                  placeholder="SSN"
+                />
+                <Input
+                  value={this.state.primaryDrInfo}
+                  onChange={this.handleInputChange}
+                  name="primaryDrInfo"
+                  placeholder="primaryDrInfo"
+                />
+                <Input
+                  value={this.state.insuranceInfo}
+                  onChange={this.handleInputChange}
+                  name="insuranceInfo"
+                  placeholder="insuranceInfo"
+                />
+                <FormBtn onClick={this.handleFormSubmit}>Register</FormBtn>
+              </form>
+            </Col>
+            <Col size="md-6 sm-12">
+              <Jumbotron>
+                <h1>Patients On My List</h1>
+              </Jumbotron>
+              {this.state.patients.length ? (
+                <List>
+                  {this.state.patients.map(patient => (
+                    <ListItem key={patient._id}>
+                      <Link to={"/patients/" + patient._id}>
+                        <strong>
+                          {patient._id} | {patient.name} | {patient.password} |
+                          {patient.email} |{patient.ssn} |{" "}
+                          {patient.primaryDrInfo} |{patient.insuranceInfo} |
+                        </strong>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
                 <h3>No Patients to Display</h3>
               )}
-          </Col>
-        </Row>
-      </Container>
+            </Col>
+          </Row>
+        </Container>
+        </Wrapper>
+      </div>
     );
   }
 }
