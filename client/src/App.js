@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/patientLogin" component={PatientLogin} />
-          <Route exact path="/emergency" component={Emergency} />
+          {/* <Route exact path="/emergency" component={Emergency} /> */}
           <Route exact path="/location" component={Maps} />
           <Route exact path="/livechat" render={() => <Customer />} />
         <Route exact path="/support" render={() => <Support />} />
