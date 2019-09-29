@@ -9,10 +9,13 @@ import Login from "./pages/Welcome";
 import Home from "./pages/Homepage";
 import Notifications from "./pages/Notifications";
 import NoMatch from "./pages/NoMatch";
-import Maps from "./pages/Location";
-import LiveChat from "./pages/LiveChat";
-import Emergency from "./pages/Emergency";
-import Reports from "./pages/Reports";
+import Maps from "../src/components/GoogleMap";
+import Customer from './components/Customer';
+import Support from './components/Support';
+import './normalize.css';
+    import './skeleton.css';
+
+import './App.css';
 
 function App() {
   return (
@@ -27,9 +30,8 @@ function App() {
           <Route exact path="/patientLogin" component={PatientLogin} />
           <Route exact path="/emergency" component={Emergency} />
           <Route exact path="/location" component={Maps} />
-          <Route exact path="/reports" component={Reports} />
-          <Route exact path="/liveChat" component={LiveChat} />
-          <Route exact path="/notifications" component={Notifications} />
+          <Route exact path="/livechat" render={() => <Customer />} />
+        <Route exact path="/support" render={() => <Support />} />
           <Route component={NoMatch} />
         </Switch>
       </div>
