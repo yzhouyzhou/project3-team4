@@ -2,9 +2,9 @@ import React, { Component } from "react";
     import axios from "axios";
     import Chatkit from "@pusher/chatkit-client";
     import Spinner from "react-spinkit";
-    import Dialog from "./Dialog";
+    import Dialog from "../chatDialog/Dialog";
     import ChatWidget from "./ChatWidget";
-    import { handleInput, sendMessage, connectToRoom } from "./sharedMethods";
+    import { handleInput, sendMessage, connectToRoom } from "../chatSharedMethod/sharedMethods";
 
     class Customer extends Component {
       constructor() {

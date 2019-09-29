@@ -1,7 +1,7 @@
 import React, { Component } from "react";
     import axios from "axios";
     import Chatkit from "@pusher/chatkit-client";
-    import { sendMessage, handleInput, connectToRoom } from "./sharedMethods";
+    import { sendMessage, handleInput, connectToRoom } from "../chatSharedMethod/sharedMethods";
 
     import "./Support.css";
 
