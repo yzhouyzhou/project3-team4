@@ -2,15 +2,6 @@ var mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
-// name
-// password
-// address
-// phone
-// email
-// ssn
-// patientID
-// insurance
-// primary dortor
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
