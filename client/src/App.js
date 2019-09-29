@@ -13,8 +13,8 @@ import HomepageLogin from "./pages/Homepage";
 import Notifications from "./pages/Notifications";
 import NoMatch from "./pages/NoMatch";
 import Maps from "../src/components/GoogleMap";
-import Customer from './components/chatCustomer';
-import Support from './components/chatSupport';
+import Customer from '../src/components/chatCustomer';
+import Support from '../src/components/chatSupport';
 import './normalize.css';
     import './skeleton.css';
 
