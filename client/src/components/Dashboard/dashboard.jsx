@@ -16,19 +16,6 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems, secondaryListItems } from "./sidebar";
 import "./style.css";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -151,20 +138,24 @@ export default function Dashboard() {
             >
               Dashboard
               <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
+                <Badge badgeContent={0} color="secondary">
                   <NotificationsIcon />
                 </Badge>
               </IconButton>
             </Typography>
-            <Typography
+            <Link
               component="h1"
               variant="h6"
               color="inherit"
               noWrap
               className={classes.logOut}
+              onClick={() => {
+                alert("You are now logged out.");
+                window.open("/")
+              }}
             >
               Log Out
-            </Typography>
+            </Link>
           </Toolbar>
         </AppBar>
         <Drawer
@@ -179,9 +170,9 @@ export default function Dashboard() {
               <div className="logo logo-normal">
                 <span>APIC</span>
               </div>
-              {/*<IconButton onClick={handleDrawerClose}>
+              {/* <IconButton onClick={handleDrawerClose}>
             <Badge />
-            </IconButton>*/}
+            </IconButton> */}
             </div>
             <Divider />
             <List className="navItem">{mainListItems}</List>

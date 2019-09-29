@@ -57,7 +57,7 @@ class PatientLogin extends Component {
               <FormBtn
                 onClick={this.handleFormSubmit}
               >
-                login
+                LOGIN
               </FormBtn>
             </form>
           </Col>
