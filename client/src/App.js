@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './index.css';
+// import './index.css';
 import Patients from "./pages/Patients";
 import PatientLogin from "./pages/PatientLogin";
 import PatientList from "./pages/PatientList";
