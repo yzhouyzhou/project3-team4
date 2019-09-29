@@ -23,7 +23,6 @@ import "./style.css";
 
 export const mainListItems = (
   <div>
-    
     <ListItem button >
       <ListItemIcon>
         <DashboardIcon />
@@ -31,6 +30,15 @@ export const mainListItems = (
       <NavLink to="/welcome" style={{ textDecoration: 'none', color: 'white' }}
       activeStyle={{ color: 'cyan'}}>
         <ListItemText primary="Dashboard"/>
+        </NavLink>
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <LocalHospitalIcon />
+      </ListItemIcon>
+      <NavLink to="/emergency" style={{ textDecoration: 'none', color: 'white' }}
+      activeStyle={{ color: 'cyan'}}>
+        <ListItemText primary="Emergency"/>
         </NavLink>
     </ListItem>
     <ListItem button>
@@ -46,15 +54,9 @@ export const mainListItems = (
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Live Chat" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <LocalHospitalIcon />
-      </ListItemIcon>
-      <NavLink to="/emergency" style={{ textDecoration: 'none', color: 'white' }}
+      <NavLink to="/liveChat" style={{ textDecoration: 'none', color: 'white' }}
       activeStyle={{ color: 'cyan'}}>
-        <ListItemText primary="Emergency"/>
+        <ListItemText primary="Live Chat"/>
         </NavLink>
     </ListItem>
     <ListItem button>
@@ -70,7 +72,10 @@ export const mainListItems = (
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <NavLink to="/reports" style={{ textDecoration: 'none', color: 'white' }}
+      activeStyle={{ color: 'cyan'}}>
+        <ListItemText primary="Reports"/>
+        </NavLink>
     </ListItem>
     <ListItem button>
       <ListItemIcon>

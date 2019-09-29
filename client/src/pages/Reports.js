@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Dashboard from "../components/Dashboard/dashboard";
 
-function Notifications() {
+function Reports() {
   return (
     <div>
   <Dashboard></Dashboard>
@@ -11,7 +11,7 @@ function Notifications() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>NOTIFICATIONS</h1>
+            <h1>Reports</h1>
             <h1>
               <span role="img" aria-label="Face With Rolling Eyes Emoji">
                :)
@@ -25,4 +25,4 @@ function Notifications() {
   );
 }
 
-export default Notifications;
+export default Reports;
