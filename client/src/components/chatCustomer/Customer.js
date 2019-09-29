@@ -3,7 +3,7 @@ import React, { Component } from "react";
     import Chatkit from "@pusher/chatkit-client";
     import Spinner from "react-spinkit";
     import Dialog from "../chatDialog/Dialog";
-    import ChatWidget from "./ChatWidget";
+    import ChatWidget from "../ChatWidget/ChatWidget";
     import { handleInput, sendMessage, connectToRoom } from "../chatSharedMethod/sharedMethods";
 
     class Customer extends Component {
