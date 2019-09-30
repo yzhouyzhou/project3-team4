@@ -4,8 +4,7 @@
   "engines": {
     "node": "12.4.0"
   },
-  "private": true,
-  "proxy": "http://localhost:3001/",
+  "private": true,  
   "dependencies": {
     "@material-ui/core": "^4.4.3",
     "@material-ui/icons": "^4.4.3",
