@@ -12,6 +12,10 @@ class Detail extends Component {
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
+    this.loadPatientById();
+  }
+
+  loadPatientById() {
     API.getPatient(this.props.match.params.id)
       .then(res => this.setState({ patient: res.data }))
       .catch(err => console.log(err));
@@ -31,7 +35,7 @@ class Detail extends Component {
         patientId: this.props.match.params.id,
         chathistory: this.state.chat
       })
-        .then(res => this.loadPatients())
+        .then(res => this.loadPatientById())
         .catch(err => console.log(err));
     }
   };

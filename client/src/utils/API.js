@@ -39,6 +39,6 @@ export default {
 
   savePatientChat: function (patientChatData) {
     console.log("chat here ", patientChatData);
-    return axios.post("/api/lifechathistory", patientChatData);
+    return axios.post("/api/lifechathistories", patientChatData);
   }
 };
