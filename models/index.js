@@ -1,5 +1,5 @@
 module.exports = {
-  Patient: require("./Patient"),
   lifechathistory: require("./lifechathistory"),
+  Patient: require("./Patient"),  
   Book: require("./book")
 };
