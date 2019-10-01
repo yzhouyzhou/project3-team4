@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "/Users/adinacianciotto 1/coding/project3-team4/client/src/utils/API.js";
+import API from "../../utils/API";
 // import API from "../utils/API";
 import { Input, FormBtn } from "../Form";
 import { Link } from "react-router-dom";

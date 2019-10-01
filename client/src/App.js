@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './index.css';
-import Register from "./pages/Register";
+import Registration from "./pages/RegisterPage";
 import UserProfile from "./pages/userProfile";
 import PatientList from "./pages/PatientList";
 import Detail from "./pages/Detail";
@@ -29,7 +29,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/home" component={Home} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/register" component={Registration} />
           <Route exact path="/profile" component={UserProfile} />
           <Route exact path="/patients/all" component={PatientList} />
           <Route exact path="/patients/:id" component={Detail} />
