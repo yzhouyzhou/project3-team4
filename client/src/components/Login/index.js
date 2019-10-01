@@ -54,12 +54,23 @@ class PatientLogin extends Component {
             placeholder="Email"
           />
           </div>
-        <div id = "password" className = "formInput">
+        <div className = "formInput">
           <Input
             value={this.state.password}
             onChange={this.handleInputChange}
             name="password"
+            type= "password"
             placeholder="Password"
+          />
+          </div>
+          {/* make this check for same password */}
+          <div id = "password" className = "formInput">
+          <Input
+            // value={this.state.password}
+            // onChange={this.handleInputChange}
+            name="password"
+            type= "password"
+            placeholder="Confirm Password"
           />
           </div>
           <FormBtn onClick={this.handleFormSubmit}>LOGIN</FormBtn>
