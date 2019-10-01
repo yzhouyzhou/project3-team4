@@ -8,30 +8,23 @@
     z-index: 1;
     color: #fff;
     font-weight: 200;
-    background-color:rgb(73, 77, 97);
+    background-color: rgb(73, 77, 97);
+    border-right: 2px solid rgb(29, 48, 75);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /* background-size: cover;
     background-position: center center; */
 }
 
-.footer{
-    background-color: darkblue;
-    color: #ffe066;
-    font-family: 'Luckiest Guy', cursive;
-    letter-spacing: 3px;
-    text-shadow: -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
-    border-top: 6px solid black;
-    }
-
-.topBar{
-    background-color:rgb(73, 77, 97);
+.topBar {
+    background-color: rgb(73, 77, 97);
 }
 
-.navItem{
+.navItem {
     margin: 0;
-      line-height: 30px;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase; 
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
 
 }
 
@@ -53,22 +46,35 @@
         background-size: cover;
         background-position: center center; } */
 .logo {
-    padding: 10px 70px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 10px 10px 10px;
     position: relative;
     z-index: 4;
 }
 
 .logo span {
-    float: left;
-    font-size: 30px;
-    margin: 5px 10px;
+    width: 150px;
+    /* float: left; */
+    font-size: 23px;
+    margin: 5px 30px;
     color: #FFFFFF;
     line-height: 20px;
     display: block;
-    font-weight:bold;
-    letter-spacing: 4px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 900;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.238em;
+    padding: 3px 12px 2px 14px;
+    border-style: solid;
+    border-width: 4px;
+    text-shadow: 3px 2px 3px rgba(255, 255, 255, .2), 4px 4px 4px rgba(206, 89, 55, 0);
+}
+
+.blueBar {
+    color: #fff;
+    background-color: #12131f;
 }
 
 /* .sidebar .logo .logo-img {
