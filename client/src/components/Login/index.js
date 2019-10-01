@@ -41,7 +41,7 @@ class PatientLogin extends Component {
       >
           <h2 id = "header">SIGN IN</h2>
         <span className = "signUpLink">
-          New to APIC? <a href="/register">SIGN UP</a>
+          New to APIC? <a href="/register">Sign Up</a>
           {/* <i class="material-icons">face</i> */}
         </span>
         <form>

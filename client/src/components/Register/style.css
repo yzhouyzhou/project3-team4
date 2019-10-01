@@ -7,8 +7,8 @@
 }
 
 .registerIn{
-    width:50%;
-    margin-left: 30%;
+    width:60%;
+    margin-left: 25%;
     margin-top:10%;
 }
 
@@ -21,11 +21,16 @@
     padding-bottom: 25px;
 }
 
-.signUpLink{
- margin-top: 20px;
+.registerLink{
+ margin-top: 10px;
  padding-top: 20px;
+ font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
 }
 
-#header{
-    padding-bottom: 10px
+#regHeader{
+    padding-bottom: 5px
+}
+
+#fullName{
+    padding-top: 12px;
 }
