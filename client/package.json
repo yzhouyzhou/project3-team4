@@ -4,11 +4,13 @@
   "engines": {
     "node": "12.4.0"
   },
-  "private": true,  
+  "private": true,
   "dependencies": {
     "@material-ui/core": "^4.4.3",
     "@material-ui/icons": "^4.4.3",
     "@pusher/chatkit-client": "^1.13.1",
+    "animate.css": "^3.7.2",
+    "animsition": "^4.0.2",
     "axios": "^0.19.0",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
@@ -19,12 +21,12 @@
     "mongoose": "^5.7.1",
     "prop-types": "^15.7.2",
     "react": "^16.6.3",
-    "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.2",
     "react-spinkit": "^3.0.0",
     "react-spring": "^8.0.27",
     "react-swipeable-views": "^0.13.3",
+    "select2": "^4.0.10",
     "styled-components": "^4.4.0"
   },
   "scripts": {

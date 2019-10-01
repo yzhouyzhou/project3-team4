@@ -1,8 +1,14 @@
 .footer{
-    background-color: darkblue;
-    color: #ffe066;
-    font-family: 'Luckiest Guy', cursive;
+    background-color: rgb(24, 25, 77);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-align: center;
     letter-spacing: 3px;
-    text-shadow: -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
-    border-top: 6px solid black;
+    border-top: 3px solid rgb(14, 26, 43);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
     }

@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
-import Dashboard from "../components/Dashboard/dashboard";
 import Wrapper from "../components/Wrapper";
+import Button from "@material-ui/core/Button";
 
-class Patients extends Component {
+class Register extends Component {
   state = {
     patients: [],
     name: "",
@@ -61,7 +61,6 @@ class Patients extends Component {
   render() {
     return (
       <div>
-        <Dashboard></Dashboard>
         <Wrapper>
         <Container fluid>
           <Row>
@@ -143,6 +142,11 @@ class Patients extends Component {
                 <h3>No Patients to Display</h3>
               )}
             </Col>
+            <Link to="/home">
+              <Button variant="outlined" color="primary">
+                Go To Home
+              </Button>
+            </Link>
           </Row>
         </Container>
         </Wrapper>
@@ -151,4 +155,4 @@ class Patients extends Component {
   }
 }
 
-export default Patients;
+export default Register;

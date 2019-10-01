@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn } from "../components/Form";
+import API from "/Users/adinacianciotto 1/coding/project3-team4/client/src/utils/API.js";
+// import API from "../utils/API";
+import { Input, FormBtn } from "../Form";
+import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import "./style.css";
 
 class PatientLogin extends Component {
   state = {
@@ -35,33 +37,47 @@ class PatientLogin extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>Login?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="Email (required)"
-              />
-              <Input
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                name="password"
-                placeholder="Password (required)"
-              />
-              <FormBtn
-                onClick={this.handleFormSubmit}
-              >
-                LOGIN
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
+      <div
+        className="signIn"
+      >
+          <h2 id = "header">SIGN IN</h2>
+        <span className = "signUpLink">
+          New to APIC? <a href="/register">SIGN UP</a>
+          {/* <i class="material-icons">face</i> */}
+        </span>
+        <form>
+        <div id = "email" className = "formInput">
+          <Input
+            value={this.state.email}
+            onChange={this.handleInputChange}
+            name="email"
+            placeholder="Email"
+          />
+          </div>
+        <div id = "password" className = "formInput">
+          <Input
+            value={this.state.password}
+            onChange={this.handleInputChange}
+            name="password"
+            placeholder="Password"
+          />
+          </div>
+          <FormBtn onClick={this.handleFormSubmit}>LOGIN</FormBtn>
+        </form>
+        <Link to="/home">
+            <Button variant="outlined" color="primary">
+              Go To Home
+            </Button>
+          </Link>
+      </div>
+    );
+  }
+}
+
+export default PatientLogin;
+
+{
+  /* <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>Patient Information {this.state.patient.name}</h1>
             </Jumbotron>
@@ -82,11 +98,5 @@ class PatientLogin extends Component {
             ) : (
                 <h3>No Patients to Display</h3>
               )}
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+          </Col> */
 }
-
-export default PatientLogin;

@@ -44,7 +44,7 @@ export const mainListItems = (
       <ListItemIcon>
         <FaceIcon />
       </ListItemIcon>
-      <NavLink to="/patients" style={{ textDecoration: 'none', color: 'white' }}
+      <NavLink to="/profile" style={{ textDecoration: 'none', color: 'white' }}
       activeStyle={{ color: 'cyan'}}>
         <ListItemText primary="User Profile"/>
         </NavLink>

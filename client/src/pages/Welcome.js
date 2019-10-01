@@ -1,26 +1,36 @@
 import React from "react";
-import { Col, Row, Container } from "../components/Grid";
-import PatientLogin from "./PatientLogin";
-import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+// import { Col, Row, Container } from "../components/Grid";
+import Box from '@material-ui/core/Box';
+import PatientLogin from "../components/Login";
+import Image from "../components/Background";
+import Grid from '@material-ui/core/Grid';
+
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   paper: {
+//     padding: theme.spacing(2),
+//     textAlign: 'center',
+//     color: theme.palette.text.secondary,
+//   },
+// }));
 
 function Welcome() {
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-12">
-            <PatientLogin></PatientLogin>
-            <Link to="/home">
-              {" "}
-              <Button variant="outlined" color="primary">
-                Go To Home
-              </Button>
-            </Link>
-            <h1>Welcome</h1>
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      <Grid container spacing={3}>
+        <Grid item xs={6}>
+          <Image>
+          </Image>
+        </Grid>
+        <Grid item xs={6}>
+          <PatientLogin></PatientLogin>
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 
 export default Welcome;
+

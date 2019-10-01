@@ -151,7 +151,7 @@ export default function Dashboard() {
               className={classes.logOut}
               onClick={() => {
                 alert("You are now logged out.");
-                window.open("/")
+                window.location.assign("/")
               }}
             >
               Log Out
