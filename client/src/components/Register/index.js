@@ -58,7 +58,7 @@ class Register extends Component {
   render() {
     return (
         <div
-        className="signIn"
+        className="registerIn"
       >
           <h2 id = "header">REGISTER</h2>
         <span className = "signUpLink">
