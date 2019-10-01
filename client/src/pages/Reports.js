@@ -12,11 +12,6 @@ function Reports() {
         <Col size="md-12">
           <Jumbotron>
             <h1>Reports</h1>
-            <h1>
-              <span role="img" aria-label="Face With Rolling Eyes Emoji">
-               :)
-              </span>
-            </h1>
           </Jumbotron>
         </Col>
       </Row>

@@ -25,7 +25,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Wrapper>
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/home" component={Home} />
@@ -42,7 +41,6 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
         <FooterBottom></FooterBottom>
-        </Wrapper>
       </div>
     </Router>
   );
