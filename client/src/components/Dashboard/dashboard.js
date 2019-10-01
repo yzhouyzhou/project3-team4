@@ -113,6 +113,13 @@ export default function Dashboard() {
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
+          style={{
+            backgroundColor: "#00004d"
+            //fontFamily: "Roboto",
+            // fontWeight: 400,
+            // lineHeight: 1.5,
+            // letterSpacing: '0.00938em'
+          }}
           position="absolute"
           className={clsx(classes.appBar, open && classes.appBarShift)}
         >
@@ -135,6 +142,13 @@ export default function Dashboard() {
               color="inherit"
               noWrap
               className={classes.title}
+              style={{
+                marginLeft: "20px",
+                textTransform: "uppercase",
+                fontWeight: 400,
+                lineHeight: 1.5,
+                letterSpacing: "0.0538em"
+              }}
             >
               Dashboard
               <IconButton color="inherit">
@@ -146,12 +160,19 @@ export default function Dashboard() {
             <Link
               component="h1"
               variant="h6"
+              style={{
+                marginLeft: "20px",
+                textTransform: "uppercase",
+                fontWeight: 400,
+                lineHeight: 1.5,
+                letterSpacing: "0.00938em"
+              }}
               color="inherit"
               noWrap
               className={classes.logOut}
               onClick={() => {
                 alert("You are now logged out.");
-                window.open("/")
+                window.location.assign("/");
               }}
             >
               Log Out

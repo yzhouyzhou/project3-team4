@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
+import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, FormBtn } from "../components/Form";
-import Dashboard from "../components/Dashboard/dashboard";
-import Wrapper from "../components/Wrapper";
+import { Input, FormBtn } from "../Form";
+import Button from "@material-ui/core/Button";
+import "./style.css";
 
-class Patients extends Component {
+class Register extends Component {
   state = {
     patients: [],
     name: "",
@@ -60,15 +57,13 @@ class Patients extends Component {
 
   render() {
     return (
-      <div>
-        <Dashboard></Dashboard>
-        <Wrapper>
-        <Container fluid>
-          <Row>
-            <Col size="md-6">
-              <Jumbotron>
-                <h1>Register?</h1>
-              </Jumbotron>
+        <div
+        className="registerIn"
+      >
+          <h2 id = "header">REGISTER</h2>
+        <span className = "signUpLink">
+          Already registered? <a href="/">LOGIN</a>
+        </span>
               <form>
                 <Input
                   value={this.state.name}
@@ -118,10 +113,9 @@ class Patients extends Component {
                   name="insuranceInfo"
                   placeholder="insuranceInfo"
                 />
-                <FormBtn onClick={this.handleFormSubmit}>Register</FormBtn>
+                <FormBtn onClick={this.handleFormSubmit}>REGISTER</FormBtn>
               </form>
-            </Col>
-            <Col size="md-6 sm-12">
+            {/* <Col size="md-6 sm-12">
               <Jumbotron>
                 <h1>Patients On My List</h1>
               </Jumbotron>
@@ -142,13 +136,15 @@ class Patients extends Component {
               ) : (
                 <h3>No Patients to Display</h3>
               )}
-            </Col>
-          </Row>
-        </Container>
-        </Wrapper>
+            </Col> */}
+            <Link to="/home">
+              <Button variant="outlined" color="primary">
+                Go To Home
+              </Button>
+            </Link>
       </div>
     );
   }
 }
 
-export default Patients;
+export default Register;

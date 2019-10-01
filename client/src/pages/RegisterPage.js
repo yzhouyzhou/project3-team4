@@ -1,6 +1,6 @@
 import React from "react";
 // import { Col, Row, Container } from "../components/Grid";
-import PatientLogin from "../components/Login";
+import Register from "../components/Register";
 import Image from "../components/Background";
 import Grid from '@material-ui/core/Grid';
 
@@ -15,7 +15,7 @@ import Grid from '@material-ui/core/Grid';
 //   },
 // }));
 
-function Welcome() {
+function Registration() {
   return (
     <div>
       <Grid container spacing={3}>
@@ -24,12 +24,12 @@ function Welcome() {
           </Image>
         </Grid>
         <Grid item xs={6}>
-          <PatientLogin></PatientLogin>
+          <Register></Register>
         </Grid>
       </Grid>
     </div>
   );
 }
 
-export default Welcome;
+export default Registration;
 
