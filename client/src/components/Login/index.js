@@ -72,7 +72,8 @@ class PatientLogin extends Component {
             placeholder="Confirm Password"
           />
           </div>
-          <FormBtn onClick={this.handleFormSubmit}>LOGIN</FormBtn>
+          <FormBtn onClick={this.handleFormSubmit}
+          >LOGIN</FormBtn>
         </form>
         <Link to="/home">
             <Button variant="outlined" color="primary">
