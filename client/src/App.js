@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.css';
 import Registration from "./pages/RegisterPage";
 import UserProfile from "./pages/userProfile";
@@ -26,10 +26,9 @@ import PatientLogin from "./pages/PatientLogin";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/" component={Login} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/register" component={Registration} />
           <Route exact path="/patientLogin" component={PatientLogin} /> 
@@ -43,11 +42,12 @@ function App() {
           <Route exact path="/notifications" component={Notifications} />
           <Route exact path="/liveChat" render={() => <Customer />} />
           <Route exact path="/support" render={() => <Support />} />
+          <Route exact path="/" component={Login} />
           <Route component={NoMatch} />
         </Switch>
         {/* <FooterBottom></FooterBottom> */}
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
