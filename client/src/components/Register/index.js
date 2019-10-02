@@ -60,40 +60,42 @@ class Register extends Component {
         <div
         className="registerIn"
       >
-          <h2 id = "header">REGISTER</h2>
-        <span className = "signUpLink">
-          Already registered? <a href="/">LOGIN</a>
+          <h2 id = "regHeader">REGISTER</h2>
+        <span className = "registerLink">
+          Already registered? <a href="/">Login</a>
         </span>
               <form>
+              <div id = "fullName" className = "formInput">
                 <Input
                   value={this.state.name}
                   onChange={this.handleInputChange}
                   name="name"
-                  placeholder="Name (required)"
+                  placeholder="Full Name"
                 />
+                </div>
                 <Input
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   name="email"
-                  placeholder="Email (required)"
+                  placeholder="Email"
                 />
                 <Input
                   value={this.state.password}
                   onChange={this.handleInputChange}
                   name="password"
-                  placeholder="Password (required)"
+                  placeholder="Password"
                 />
                 <Input
                   value={this.state.phone}
                   onChange={this.handleInputChange}
                   name="phone"
-                  placeholder="phone"
+                  placeholder="Phone Number"
                 />
                 <Input
                   value={this.state.address}
                   onChange={this.handleInputChange}
                   name="address"
-                  placeholder="address"
+                  placeholder="Address"
                 />
                 <Input
                   value={this.state.ssn}
@@ -105,13 +107,13 @@ class Register extends Component {
                   value={this.state.primaryDrInfo}
                   onChange={this.handleInputChange}
                   name="primaryDrInfo"
-                  placeholder="primaryDrInfo"
+                  placeholder="Primary Doctors' Contact Information"
                 />
                 <Input
                   value={this.state.insuranceInfo}
                   onChange={this.handleInputChange}
                   name="insuranceInfo"
-                  placeholder="insuranceInfo"
+                  placeholder="Insurance Information"
                 />
                 <FormBtn onClick={this.handleFormSubmit}>REGISTER</FormBtn>
               </form>

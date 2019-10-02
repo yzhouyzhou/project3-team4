@@ -41,7 +41,7 @@ class PatientLogin extends Component {
       >
           <h2 id = "header">SIGN IN</h2>
         <span className = "signUpLink">
-          New to APIC? <a href="/register">SIGN UP</a>
+          New to APIC? <a href="/register">Sign Up</a>
           {/* <i class="material-icons">face</i> */}
         </span>
         <form>
@@ -72,7 +72,8 @@ class PatientLogin extends Component {
             placeholder="Confirm Password"
           />
           </div>
-          <FormBtn onClick={this.handleFormSubmit}>LOGIN</FormBtn>
+          <FormBtn onClick={this.handleFormSubmit}
+          >LOGIN</FormBtn>
         </form>
         <Link to="/home">
             <Button variant="outlined" color="primary">
