@@ -6,10 +6,10 @@ import { Marker } from '../Marker';
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 42.0454159,
+      lng: -87.6989784
     },
-    zoom: 11
+    zoom: 12
   };
  
   render() {
@@ -29,7 +29,7 @@ class SimpleMap extends Component {
            <Marker
             lat={59.935417}
             lng={30.337854}
-            text="Apic"
+            text="My Marker"
           />
            <Marker
             lat={59.965413}
