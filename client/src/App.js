@@ -45,7 +45,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route component={NoMatch} />
         </Switch>
-        {/* <FooterBottom></FooterBottom> */}
+        <FooterBottom></FooterBottom>
       </div>
     </BrowserRouter>
   );
