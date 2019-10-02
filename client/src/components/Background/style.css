@@ -6,17 +6,17 @@
 }
 
 #backgroundImage{
-    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#apicImage{
+/* #apicImage{
     position: absolute; 
     top: 8px; 
     left: 30px; 
     width: 70%; 
     font-size:200px;
-}
-/* #picHeader{
+} */
+#picHeader{
     font-family: 'Big Shoulders Display', cursive;
     position: absolute; 
     color:white;
@@ -25,4 +25,4 @@
     left: 60px; 
     width: 100%; 
     font-size:200px;
-} */
+}

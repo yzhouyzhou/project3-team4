@@ -7,8 +7,8 @@ function Image() {
     return (
       <div id = "background">
     <img src={Background} alt="background" id = "backgroundImage"/>
-    <img src={APIC} alt="APIC" id = "apicImage"/>
-    {/* <h2 id = "picHeader">APIC</h2> */}
+    {/* <img src={APIC} alt="APIC" id = "apicImage"/> */}
+    <h2 id = "picHeader">APIC</h2>
     </div>
     )}
 
