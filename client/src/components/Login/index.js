@@ -80,6 +80,16 @@ class PatientLogin extends Component {
               Go To Home
             </Button>
           </Link>
+          <Link to="/patients">
+              <Button variant="outlined" color="primary">
+                Go To Register
+              </Button>
+            </Link>
+            <Link to="/patientLogin">
+              <Button variant="outlined" color="primary">
+                Go To Patient Login
+              </Button>
+            </Link>
       </div>
     );
   }

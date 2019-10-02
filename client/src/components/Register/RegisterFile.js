@@ -147,6 +147,11 @@ class Register extends Component {
                 Go To Home
               </Button>
             </Link>
+            <Link to="/patients">
+              <Button variant="outlined" color="primary">
+                Go To DataBase
+              </Button>
+            </Link>
           </Row>
         </Container>
         </Wrapper>
