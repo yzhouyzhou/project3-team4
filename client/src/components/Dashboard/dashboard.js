@@ -150,7 +150,7 @@ export default function Dashboard(props) {
                 letterSpacing: "0.0538em"
               }}
             >
-              Dashboard     &nbsp;&nbsp;&nbsp;&nbsp;{props.name}&nbsp;&nbsp;&nbsp;&nbsp;     
+              Dashboard    &nbsp;&nbsp;&nbsp;&nbsp;{props.name}&nbsp;&nbsp;&nbsp;&nbsp;     
               <IconButton color="inherit">
                 <Badge badgeContent={0} color="secondary">
                   <NotificationsIcon />
