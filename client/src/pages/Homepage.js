@@ -12,13 +12,16 @@ class Homepage extends Component {
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
+
     console.log(this.props.location.state.patient);
   }
 
 render(){ 
   return (
     <div>
-      <Dashboard></Dashboard>
+      <Dashboard 
+      name={this.state.patient.name}>
+      </Dashboard>
       <Wrapper>
         <Container fixed>
           <Grid container spacing={3}>
@@ -29,9 +32,8 @@ render(){
                 <h1
                   style={{
                     fontFamily: 'Ubuntu',
-                  }}>
-                  HELLO  
-                  {this.state.patient.name}                   
+                  }}>                   
+                  {this.state.patient.name}&nbsp;&nbsp;&nbsp;&nbsp;               
                   WELCOME TO APIC
           <img src={APIC} alt="ApicLogo" id="apImage"
                     style={{

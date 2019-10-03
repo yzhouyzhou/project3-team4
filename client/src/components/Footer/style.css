@@ -10,7 +10,7 @@
     border-top: 5px solid rgb(14, 26, 43);
     box-shadow: 8px 8px 8px 8px #575757;
     text-shadow: 5px 4px 5px rgba(191, 183, 183, 0.2), 4px 4px 4px rgba(206,89,55,0);
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
     right: 0;
