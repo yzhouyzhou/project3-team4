@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Input, FormBtn } from "../Form";
-import Button from "@material-ui/core/Button";
 import "./style.css";
 
 class Register extends Component {
   state = {
-    patients: [],
+    patient: {},
     name: "",
     email: "",
     password: "",
@@ -15,18 +14,18 @@ class Register extends Component {
     address: "",
     ssn: "",
     primaryDrInfo: "",
-    insuranceInfo: ""
+    insuranceInfo: "",
+    registerStatus: false
   };
 
-  componentDidMount() {
-    this.loadPatients();
-  }
-
-  loadPatients = () => {
-    API.getPatients()
-      .then(res =>
-        this.setState({ patients: res.data, name: "", email: "", password: "" })
-      )
+  loadPatientByEmail = () => {
+    API.getPatientByEmail(this.state.email)
+      .then(res => {
+        console.log(res.data);
+        this.setState({ patient: res.data });
+        console.log("now", this.state.patient);
+        this.setState({ registerStatus: true });
+      })
       .catch(err => console.log(err));
   };
 
@@ -50,14 +49,16 @@ class Register extends Component {
         primaryDrInfo: this.state.primaryDrInfo,
         insuranceInfo: this.state.insuranceInfo
       })
-        .then(res => this.loadPatients())
+        .then(res => this.loadPatientByEmail())
         .catch(err => console.log(err));
     }
   };
 
   render() {
     return (
-      <div className="registerIn">
+      <div
+        className="registerIn"
+      >
         <h2 id="regHeader">REGISTER</h2>
         <span className="registerLink">
           Already registered? <a href="/">Login</a>
@@ -65,7 +66,7 @@ class Register extends Component {
         <form>
           <div id="fullName" className="formInput">
             <Input
-              required
+       required
               value={this.state.name}
               onChange={this.handleInputChange}
               name="name"
@@ -73,49 +74,49 @@ class Register extends Component {
             />
           </div>
           <Input
-            required
+         required
             value={this.state.email}
             onChange={this.handleInputChange}
             name="email"
             placeholder="Email"
           />
           <Input
-            required
+      required
             value={this.state.password}
             onChange={this.handleInputChange}
             name="password"
             placeholder="Password"
           />
           <Input
-            required
+       required
             value={this.state.phone}
             onChange={this.handleInputChange}
             name="phone"
             placeholder="Phone Number"
           />
           <Input
-            required
+      required
             value={this.state.address}
             onChange={this.handleInputChange}
             name="address"
             placeholder="Address"
           />
           <Input
-            required
+      required
             value={this.state.ssn}
             onChange={this.handleInputChange}
             name="ssn"
             placeholder="SSN"
           />
           <Input
-            required
+      required
             value={this.state.primaryDrInfo}
             onChange={this.handleInputChange}
             name="primaryDrInfo"
             placeholder="Primary Doctors' Contact Information"
           />
           <Input
-            required
+      required
             value={this.state.insuranceInfo}
             onChange={this.handleInputChange}
             name="insuranceInfo"
@@ -123,43 +124,13 @@ class Register extends Component {
           />
           <FormBtn onClick={this.handleFormSubmit}>REGISTER</FormBtn>
         </form>
-        {/* <Col size="md-6 sm-12">
-              <Jumbotron>
-                <h1>Patients On My List</h1>
-              </Jumbotron>
-              {this.state.patients.length ? (
-                <List>
-                  {this.state.patients.map(patient => (
-                    <ListItem key={patient._id}>
-                      <Link to={"/patients/" + patient._id}>
-                        <strong>
-                          {patient._id} | {patient.name} | {patient.password} |
-                          {patient.email} |{patient.ssn} |{" "}
-                          {patient.primaryDrInfo} |{patient.insuranceInfo} |
-                        </strong>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </List>
-              ) : (
-                <h3>No Patients to Display</h3>
-              )}
-            </Col> */}
-        <Link to="/home">
-          <Button variant="outlined" color="primary">
-            Go To Home
-          </Button>
-        </Link>
-        <Link to="/patients">
-          <Button variant="outlined" color="primary">
-            Go To Register
-          </Button>
-        </Link>
-        <Link to="/patientLogin">
-          <Button variant="outlined" color="primary">
-            Go To Patient Login
-          </Button>
-        </Link>
+        {this.state.registerStatus ?
+          <Redirect to={{
+            pathname: '/home',
+            state: { patient: this.state.patient }
+          }}
+          /> : ""
+        }
       </div>
     );
   }
