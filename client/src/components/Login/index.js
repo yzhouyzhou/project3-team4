@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../Form";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import "./style.css";
 
@@ -9,7 +9,9 @@ class Login extends Component {
   state = {
     patient: {},
     email: "",
-    password: ""
+    password: "",
+    loginStatus: false,
+    loginStatusStr: ""
   };
 
   loadPatientByEmail = () => {
@@ -18,10 +20,20 @@ class Login extends Component {
         console.log(res.data);
         this.setState({ patient: res.data });
         console.log("now", this.state.patient);
-        window.location.assign(`/home`);
+        this.verifyPassword();
       })
       .catch(err => console.log(err));
   };
+
+  verifyPassword = () => {
+    console.log(this.state.patient.password,  this.state.password);
+    (!this.state.patient) ?
+      this.setState({ loginStatusStr: "Sorry invalid user/password" })
+      : (this.state.patient.password != this.state.password) ?
+        this.setState({ loginStatusStr: "Sorry invalid user/password" })
+        :
+        this.setState({ loginStatus: true });
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -63,9 +75,18 @@ class Login extends Component {
               placeholder="Password"
             />
           </div>
+          <span id="header">{this.state.loginStatusStr}</span>
           <FormBtn onClick={this.handleFormSubmit}
           >LOGIN</FormBtn>
+
         </form>
+        {this.state.loginStatus ?
+          <Redirect to={{
+            pathname: '/home',
+            state: { patient: this.state.patient }
+          }}
+          /> : ""
+        }
         <Link to="/home">
           <Button variant="outlined" color="primary">
             Go To Home
@@ -81,11 +102,11 @@ class Login extends Component {
             Go To Patient Login
               </Button>
         </Link>
+
       </div>
+
     );
   }
 }
-
-
 
 export default Login;

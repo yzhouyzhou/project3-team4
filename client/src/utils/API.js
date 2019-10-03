@@ -19,21 +19,22 @@ export default {
   },
 
   getPatients: function () {
-    console.log("hello");
+    console.log("getPatients ");
     return axios.get("/api/patients/all");
   },
   // Gets the patient with the given id
   getPatient: function (id) {
+    console.log("getPatient ", id);
     return axios.get("/api/patients/" + id);
   },
   // Gets the patient with the given email
   getPatientByEmail: function (emailData) {
-    console.log("login email", emailData);
+    console.log("getPatientByEmail ", emailData);
     return axios.get("/api/patients", { params: { email:  emailData} });
   },
 
   savePatient: function (patientData) {
-    console.log("here", patientData);
+    console.log("savePatient ", patientData);
     return axios.post("/api/patients", patientData);
   },
 
