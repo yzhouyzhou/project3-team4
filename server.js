@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+// const testSMS= require("./send_sms")
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -63,6 +63,8 @@ app.post("/authenticate", (req, res) => {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lifechat",  {useNewUrlParser: true, useUnifiedTopology: true});
 //mongoose.connect(process.env.MONGODB_URI || "mongodb://project3:project3@ds143245.mlab.com:43245/heroku_t6n4mrws",  {useNewUrlParser: true});
 
+
+ 
 
 // Start the API server
 app.listen(PORT, function() {
