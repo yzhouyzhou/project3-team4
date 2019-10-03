@@ -11,7 +11,6 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import { makeStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import Icon from "@material-ui/core/Icon";
 import Button from "@material-ui/core/Button";
@@ -106,8 +105,10 @@ export default function TextFields() {
   };
 
   const timeout = event => {
-    setTimeout( () => { alert("Your report has been sent. You are now checked in!") }, 3500)
-  }
+    setTimeout(() => {
+      alert("Your report has been sent. You are now checked in!");
+    }, 3500);
+  };
 
   const handleOpen = () => {
     setOpen(true);
@@ -115,7 +116,9 @@ export default function TextFields() {
 
   const handleClose = () => {
     timeout();
-    setTimeout( () => { setOpen(false) }, 4500);
+    setTimeout(() => {
+      setOpen(false);
+    }, 4500);
   };
   const handleMouseDownSSN = event => {
     event.preventDefault();
@@ -312,8 +315,7 @@ export default function TextFields() {
             <Fade in={open}>
               <div className={classes.paper}>
                 <h4 id="transition-modal-title">Processing Request</h4>
-                <br>
-                </br>
+                <br></br>
                 <br></br>
                 <LinearProgress />
                 <br />

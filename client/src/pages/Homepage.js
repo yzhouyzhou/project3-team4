@@ -34,7 +34,6 @@ class Homepage extends Component {
                   <h1
                     style={{
                       fontFamily: "Ubuntu",
-                      fontFamily: "Ubuntu",
                       marginBottom: "30px",
                       borderStyle: "solid",
                       borderWidth: "5px",
@@ -87,8 +86,8 @@ class Homepage extends Component {
                   <h6>Location</h6>
                   <p>
                     Need a prescription? With our location feature get access to
-                    the local pharmacies near you. Go{" "}
-                    <a href="/location">here</a> to check the locations near
+                    the locations of pharmacies near you. Go{" "}
+                    <a href="/location">here</a> to check the local pharmacies near
                     you.
                   </p>
                 </div>
