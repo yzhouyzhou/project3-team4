@@ -1,31 +1,36 @@
 .form-control {
     width: 100%;
-    }
-
-.form-control:hover{
-    background-color: yellow;
 }
 
-.registerIn{
-    width:50%;
-    margin-left: 30%;
-    margin-top:10%;
+.form-control:hover {
+    background-color: rgb(42, 191, 228);
 }
 
-#email{
-    padding-top:8px;
+.registerIn {
+    width: 60%;
+    margin-left: 25%;
+    margin-top: 8%;
 }
 
-#password{
-    padding-top:5px;
+#email {
+    padding-top: 8px;
+}
+
+#password {
+    padding-top: 5px;
     padding-bottom: 25px;
 }
 
-.signUpLink{
- margin-top: 20px;
- padding-top: 20px;
+.registerLink {
+    margin-top: 10px;
+    padding-top: 20px;
+    font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
 }
 
-#header{
-    padding-bottom: 10px
+#regHeader {
+    padding-bottom: 5px
+}
+
+#fullName {
+    padding-top: 12px;
 }

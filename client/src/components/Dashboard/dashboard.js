@@ -13,7 +13,7 @@ import Badge from "@material-ui/core/Badge";
 import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import { mainListItems, secondaryListItems } from "./sidebar";
+import { mainListItems } from "./sidebar";
 import "./style.css";
 
 const drawerWidth = 240;
@@ -97,16 +97,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
+  // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div id="topBar" className="topBar">
@@ -150,13 +150,14 @@ export default function Dashboard() {
                 letterSpacing: "0.0538em"
               }}
             >
-              Dashboard
+              Dashboard    &nbsp;&nbsp;&nbsp;&nbsp;{props.name}&nbsp;&nbsp;&nbsp;&nbsp;     
               <IconButton color="inherit">
                 <Badge badgeContent={0} color="secondary">
                   <NotificationsIcon />
                 </Badge>
               </IconButton>
             </Typography>
+            
             <Link
               component="h1"
               variant="h6"

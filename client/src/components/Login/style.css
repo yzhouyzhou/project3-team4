@@ -3,7 +3,7 @@
     }
 
 .form-control:hover{
-    background-color: yellow;
+    background-color: rgb(237, 237, 237);
 }
 
 .signIn{
@@ -24,8 +24,14 @@
 .signUpLink{
  margin-top: 20px;
  padding-top: 20px;
+ font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
 }
 
 #header{
     padding-bottom: 10px
+}
+
+.btn-success{
+  /* text-shadow: 3px 2px 3px rgba(255, 255, 255, .2), 4px 4px 4px rgba(206, 89, 55, 0); */
+  border: 2px solid rgb(21, 147, 57);
 }

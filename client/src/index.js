@@ -3,12 +3,9 @@ import ReactDOM from "react-dom";
 // import './index.css';
 import * as serviceWorker from "./serviceWorker";
 import App from "./App";
-import { HashRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <HashRouter>
-    <App />
-  </HashRouter>,
+    <App />,
   document.getElementById("root")
 );
 

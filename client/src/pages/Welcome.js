@@ -1,6 +1,6 @@
 import React from "react";
 // import { Col, Row, Container } from "../components/Grid";
-import PatientLogin from "../components/Login";
+import Login from "../components/Login";
 import Image from "../components/Background";
 import Grid from '@material-ui/core/Grid';
 
@@ -24,7 +24,7 @@ function Welcome() {
           </Image>
         </Grid>
         <Grid item xs={6}>
-          <PatientLogin></PatientLogin>
+          <Login></Login>
         </Grid>
       </Grid>
     </div>
