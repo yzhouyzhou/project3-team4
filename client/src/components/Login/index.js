@@ -49,9 +49,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div
-        className="signIn"
-      >
+      <div className="signIn">
         <h2 id="header">SIGN IN</h2>
         <span className="signUpLink">
           New to APIC? <a href="/register">Sign Up</a>
@@ -60,6 +58,7 @@ class Login extends Component {
         <form>
           <div id="email" className="formInput">
             <Input
+              required
               value={this.state.email}
               onChange={this.handleInputChange}
               name="email"
@@ -68,6 +67,7 @@ class Login extends Component {
           </div>
           <div className="formInput">
             <Input
+              required
               value={this.state.password}
               onChange={this.handleInputChange}
               name="password"

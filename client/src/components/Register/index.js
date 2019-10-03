@@ -66,6 +66,7 @@ class Register extends Component {
         <form>
           <div id="fullName" className="formInput">
             <Input
+       required
               value={this.state.name}
               onChange={this.handleInputChange}
               name="name"
@@ -73,42 +74,49 @@ class Register extends Component {
             />
           </div>
           <Input
+         required
             value={this.state.email}
             onChange={this.handleInputChange}
             name="email"
             placeholder="Email"
           />
           <Input
+      required
             value={this.state.password}
             onChange={this.handleInputChange}
             name="password"
             placeholder="Password"
           />
           <Input
+       required
             value={this.state.phone}
             onChange={this.handleInputChange}
             name="phone"
             placeholder="Phone Number"
           />
           <Input
+      required
             value={this.state.address}
             onChange={this.handleInputChange}
             name="address"
             placeholder="Address"
           />
           <Input
+      required
             value={this.state.ssn}
             onChange={this.handleInputChange}
             name="ssn"
             placeholder="SSN"
           />
           <Input
+      required
             value={this.state.primaryDrInfo}
             onChange={this.handleInputChange}
             name="primaryDrInfo"
             placeholder="Primary Doctors' Contact Information"
           />
           <Input
+      required
             value={this.state.insuranceInfo}
             onChange={this.handleInputChange}
             name="insuranceInfo"
@@ -116,7 +124,6 @@ class Register extends Component {
           />
           <FormBtn onClick={this.handleFormSubmit}>REGISTER</FormBtn>
         </form>
-
         {this.state.registerStatus ?
           <Redirect to={{
             pathname: '/home',

@@ -36,6 +36,13 @@ class Homepage extends Component {
                   <h1
                     style={{
                       fontFamily: 'Ubuntu',
+      fontFamily: 'Ubuntu',
+            marginBottom: '30px',
+            borderStyle: 'solid',
+            borderWidth: '5px',
+            display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
                     }}>
                     {this.state.patient.name}&nbsp;&nbsp;&nbsp;&nbsp;
                     WELCOME TO APIC
