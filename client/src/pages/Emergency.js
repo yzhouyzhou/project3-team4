@@ -326,9 +326,3 @@ export default function TextFields() {
     </div>
   );
 }
-
-//setTimeout( () => { alert("Your report has been sent. You are now checked in!") }, 5000)
-
-// onClick={() => {
-            //   alert("Your report has been sent. You are now checked in!");
-            // }}

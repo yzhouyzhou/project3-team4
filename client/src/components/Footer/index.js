@@ -6,24 +6,35 @@ import Button from "@material-ui/core/Button";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-copyright text-center py-3">© 2019 APIC
-    </div>
-      {/* <Link to="/home">
-        <Button variant="outlined" color="primary">
+      <div className="footer-copyright text-center py-3">© 2019 APIC</div>
+      <Link to="/home">
+        <Button
+          variant="outlined"
+          color="primary"
+          style={{
+            float: "right"
+          }}
+        >
           Go To Home
-            </Button>
+        </Button>
       </Link>
-      <Link to="/patients">
+      {/* <Link to="/patients">
         <Button variant="outlined" color="primary">
           Go To Register
               </Button>
       </Link> */}
       <Link to="/Patients/all">
-        <Button variant="outlined" color="primary">
+        <Button
+          variant="outlined"
+          color="primary"
+          style={{
+            float: "right"
+          }}
+        >
           Go To Patient List
-              </Button>
+        </Button>
       </Link>
     </footer>
-  )
+  );
 }
 export default Footer;
