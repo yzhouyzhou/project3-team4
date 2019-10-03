@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ee from 'event -emitter';
-
+ 
 const container = styled.div
 background-color: #5555;
 color: red;
