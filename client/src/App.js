@@ -9,7 +9,7 @@ import Login from "./pages/Welcome";
 import Home from "./pages/Homepage";
 import Notifications from "./pages/Notifications";
 import NoMatch from "./pages/NoMatch";
-import Maps from "../src/components/GoogleMap";
+import Maps from "./pages/Location";
 import FooterBottom from "../src/components/Footer";
 import PatientLists from "./pages/PatientList";
 import Emergency from "./pages/Emergency";
