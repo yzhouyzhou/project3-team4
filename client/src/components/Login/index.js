@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../Form";
-import { Link, Redirect } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import { Redirect } from "react-router-dom";
+// import Button from "@material-ui/core/Button";
 import "./style.css";
 
 class Login extends Component {
@@ -29,7 +29,7 @@ class Login extends Component {
     console.log(this.state.patient.password,  this.state.password);
     (!this.state.patient) ?
       this.setState({ loginStatusStr: "Sorry invalid user/password" })
-      : (this.state.patient.password != this.state.password) ?
+      : (this.state.patient.password !== this.state.password) ?
         this.setState({ loginStatusStr: "Sorry invalid user/password" })
         :
         this.setState({ loginStatus: true });
@@ -87,22 +87,6 @@ class Login extends Component {
           }}
           /> : ""
         }
-        <Link to="/home">
-          <Button variant="outlined" color="primary">
-            Go To Home
-            </Button>
-        </Link>
-        <Link to="/patients">
-          <Button variant="outlined" color="primary">
-            Go To Register
-              </Button>
-        </Link>
-        <Link to="/patientLogin">
-          <Button variant="outlined" color="primary">
-            Go To Patient Login
-              </Button>
-        </Link>
-
       </div>
 
     );

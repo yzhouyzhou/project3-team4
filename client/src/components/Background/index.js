@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import Background from './img.jpg';
-import APIC from './APIC.png';
+// import APIC from './APIC.png';
 
 function Image() {   
     return (
