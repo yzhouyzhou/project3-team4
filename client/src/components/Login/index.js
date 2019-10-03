@@ -37,9 +37,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div
-        className="signIn"
-      >
+      <div className="signIn">
         <h2 id="header">SIGN IN</h2>
         <span className="signUpLink">
           New to APIC? <a href="/register">Sign Up</a>
@@ -48,6 +46,7 @@ class Login extends Component {
         <form>
           <div id="email" className="formInput">
             <Input
+              required
               value={this.state.email}
               onChange={this.handleInputChange}
               name="email"
@@ -56,6 +55,7 @@ class Login extends Component {
           </div>
           <div className="formInput">
             <Input
+              required
               value={this.state.password}
               onChange={this.handleInputChange}
               name="password"
@@ -63,29 +63,26 @@ class Login extends Component {
               placeholder="Password"
             />
           </div>
-          <FormBtn onClick={this.handleFormSubmit}
-          >LOGIN</FormBtn>
+          <FormBtn onClick={this.handleFormSubmit}>LOGIN</FormBtn>
         </form>
         <Link to="/home">
           <Button variant="outlined" color="primary">
             Go To Home
-            </Button>
+          </Button>
         </Link>
         <Link to="/patients">
           <Button variant="outlined" color="primary">
             Go To Register
-              </Button>
+          </Button>
         </Link>
         <Link to="/patientLogin">
           <Button variant="outlined" color="primary">
             Go To Patient Login
-              </Button>
+          </Button>
         </Link>
       </div>
     );
   }
 }
-
-
 
 export default Login;

@@ -57,67 +57,73 @@ class Register extends Component {
 
   render() {
     return (
-        <div
-        className="registerIn"
-      >
-          <h2 id = "regHeader">REGISTER</h2>
-        <span className = "registerLink">
+      <div className="registerIn">
+        <h2 id="regHeader">REGISTER</h2>
+        <span className="registerLink">
           Already registered? <a href="/">Login</a>
         </span>
-              <form>
-              <div id = "fullName" className = "formInput">
-                <Input
-                  value={this.state.name}
-                  onChange={this.handleInputChange}
-                  name="name"
-                  placeholder="Full Name"
-                />
-                </div>
-                <Input
-                  value={this.state.email}
-                  onChange={this.handleInputChange}
-                  name="email"
-                  placeholder="Email"
-                />
-                <Input
-                  value={this.state.password}
-                  onChange={this.handleInputChange}
-                  name="password"
-                  placeholder="Password"
-                />
-                <Input
-                  value={this.state.phone}
-                  onChange={this.handleInputChange}
-                  name="phone"
-                  placeholder="Phone Number"
-                />
-                <Input
-                  value={this.state.address}
-                  onChange={this.handleInputChange}
-                  name="address"
-                  placeholder="Address"
-                />
-                <Input
-                  value={this.state.ssn}
-                  onChange={this.handleInputChange}
-                  name="ssn"
-                  placeholder="SSN"
-                />
-                <Input
-                  value={this.state.primaryDrInfo}
-                  onChange={this.handleInputChange}
-                  name="primaryDrInfo"
-                  placeholder="Primary Doctors' Contact Information"
-                />
-                <Input
-                  value={this.state.insuranceInfo}
-                  onChange={this.handleInputChange}
-                  name="insuranceInfo"
-                  placeholder="Insurance Information"
-                />
-                <FormBtn onClick={this.handleFormSubmit}>REGISTER</FormBtn>
-              </form>
-            {/* <Col size="md-6 sm-12">
+        <form>
+          <div id="fullName" className="formInput">
+            <Input
+              required
+              value={this.state.name}
+              onChange={this.handleInputChange}
+              name="name"
+              placeholder="Full Name"
+            />
+          </div>
+          <Input
+            required
+            value={this.state.email}
+            onChange={this.handleInputChange}
+            name="email"
+            placeholder="Email"
+          />
+          <Input
+            required
+            value={this.state.password}
+            onChange={this.handleInputChange}
+            name="password"
+            placeholder="Password"
+          />
+          <Input
+            required
+            value={this.state.phone}
+            onChange={this.handleInputChange}
+            name="phone"
+            placeholder="Phone Number"
+          />
+          <Input
+            required
+            value={this.state.address}
+            onChange={this.handleInputChange}
+            name="address"
+            placeholder="Address"
+          />
+          <Input
+            required
+            value={this.state.ssn}
+            onChange={this.handleInputChange}
+            name="ssn"
+            placeholder="SSN"
+          />
+          <Input
+            required
+            value={this.state.primaryDrInfo}
+            onChange={this.handleInputChange}
+            name="primaryDrInfo"
+            placeholder="Primary Doctors' Contact Information"
+          />
+          <Input
+            required
+            value={this.state.insuranceInfo}
+            onChange={this.handleInputChange}
+            name="insuranceInfo"
+            placeholder="Insurance Information"
+          />
+          <FormBtn onClick={this.handleFormSubmit}>REGISTER</FormBtn>
+        </form>
+        {/* <Col size="md-6 sm-12">
               <Jumbotron>
                 <h1>Patients On My List</h1>
               </Jumbotron>
@@ -139,21 +145,21 @@ class Register extends Component {
                 <h3>No Patients to Display</h3>
               )}
             </Col> */}
-            <Link to="/home">
-              <Button variant="outlined" color="primary">
-                Go To Home
-              </Button>
-            </Link>
-            <Link to="/patients">
-              <Button variant="outlined" color="primary">
-                Go To Register
-              </Button>
-            </Link>
-            <Link to="/patientLogin">
-              <Button variant="outlined" color="primary">
-                Go To Patient Login
-              </Button>
-            </Link>
+        <Link to="/home">
+          <Button variant="outlined" color="primary">
+            Go To Home
+          </Button>
+        </Link>
+        <Link to="/patients">
+          <Button variant="outlined" color="primary">
+            Go To Register
+          </Button>
+        </Link>
+        <Link to="/patientLogin">
+          <Button variant="outlined" color="primary">
+            Go To Patient Login
+          </Button>
+        </Link>
       </div>
     );
   }
