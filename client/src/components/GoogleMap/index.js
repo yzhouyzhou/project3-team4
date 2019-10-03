@@ -86,6 +86,21 @@ class SimpleMap extends Component {
             lng={-87.7262461}
             text="My Marker"
           />
+           <Marker
+            lat={42.0595952}
+            lng={-87.8384898}
+            text="My Marker"
+          />
+           <Marker
+            lat={42.0710113}
+            lng={-87.7460396}
+            text="My Marker"
+           />
+           <Marker
+            lat={42.0588682}
+            lng={-87.7953927}
+            text="My Marker"
+          />
         </GoogleMapReact>
       </div>
     );
