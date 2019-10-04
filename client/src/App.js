@@ -40,8 +40,10 @@ function App() {
           <Route exact path="/location" component={Maps} />
           <Route exact path="/reports" component={Reports} />
           <Route exact path="/notifications" component={Notifications} />
-          <Route exact path="/liveChat" render={() => <Customer />} />
-          <Route exact path="/support" render={() => <Support />} />
+          {/* <Route exact path="/liveChat" render={() => <Customer />} />
+          <Route exact path="/support" render={() => <Support />} /> */}
+          <Route exact path="/liveChat" component={Customer} />
+          <Route exact path="/support" component={Support} />
           <Route exact path="/" component={Login} />
           <Route component={NoMatch} />
         </Switch>
