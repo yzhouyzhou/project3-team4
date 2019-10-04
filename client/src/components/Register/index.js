@@ -56,9 +56,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div
-        className="registerIn"
-      >
+      <div className="registerIn">
         <h2 id="regHeader">REGISTER</h2>
         <span className="registerLink">
           Already registered? <a href="/">Login</a>
@@ -66,7 +64,7 @@ class Register extends Component {
         <form>
           <div id="fullName" className="formInput">
             <Input
-       required
+              required
               value={this.state.name}
               onChange={this.handleInputChange}
               name="name"
@@ -74,49 +72,49 @@ class Register extends Component {
             />
           </div>
           <Input
-         required
+            required
             value={this.state.email}
             onChange={this.handleInputChange}
             name="email"
             placeholder="Email"
           />
           <Input
-      required
+            required
             value={this.state.password}
             onChange={this.handleInputChange}
             name="password"
             placeholder="Password"
           />
           <Input
-       required
+            required
             value={this.state.phone}
             onChange={this.handleInputChange}
             name="phone"
             placeholder="Phone Number"
           />
           <Input
-      required
+            required
             value={this.state.address}
             onChange={this.handleInputChange}
             name="address"
             placeholder="Address"
           />
           <Input
-      required
+            required
             value={this.state.ssn}
             onChange={this.handleInputChange}
             name="ssn"
             placeholder="SSN"
           />
           <Input
-      required
+            required
             value={this.state.primaryDrInfo}
             onChange={this.handleInputChange}
             name="primaryDrInfo"
-            placeholder="Primary Doctors' Contact Information"
+            placeholder="Primary Doctors' Phone Number"
           />
           <Input
-      required
+            required
             value={this.state.insuranceInfo}
             onChange={this.handleInputChange}
             name="insuranceInfo"
@@ -124,13 +122,16 @@ class Register extends Component {
           />
           <FormBtn onClick={this.handleFormSubmit}>REGISTER</FormBtn>
         </form>
-        {this.state.registerStatus ?
-          <Redirect to={{
-            pathname: '/home',
-            state: { patient: this.state.patient }
-          }}
-          /> : ""
-        }
+        {this.state.registerStatus ? (
+          <Redirect
+            to={{
+              pathname: "/home",
+              state: { patient: this.state.patient }
+            }}
+          />
+        ) : (
+          ""
+        )}
       </div>
     );
   }
