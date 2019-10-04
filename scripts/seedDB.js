@@ -48,6 +48,26 @@ db.lifechathistory
    console.error(err);
    process.exit(1);
  });
+ 
+ const emergencySeed = [
+  {
+    fullname: "TTT",
+    email: "TTT@test.com",
+    password: "TTT",
+    phonenumber: "1111111",
+    personaladdress: "1111111",
+    hospitaladdress: "1111111",
+    appointmentdate: "1111111",
+    commentone: "1111111",
+    commenttwo: "1111111",
+    ssn: "",
+    scheduledoctor:"11111"
+  },
+ ];
+ db.emergency
+  .remove({})
+  .then(() => db.emergency.collection.insertMany(emergencySeed))
+ 
 
 
 
@@ -68,6 +88,7 @@ const profileSeed = [
  db.profile
   .remove({})
   .then(() => db.profile.collection.insertMany(profileSeed))
+ 
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -75,31 +96,6 @@ const profileSeed = [
   .catch(err => {
     console.error(err);
     process.exit(1);
+ 
   });
-
-  const emergencySeed = [
-    {
-      fullname: "TTT",
-      email: "TTT@test.com",
-      password: "TTT",
-      phonenumber: "1111111",
-      personaladdress: "1111111",
-      hospitaladdress: "1111111",
-      appointmentdate: "1111111",
-      commentone: "1111111",
-      commenttwo: "1111111",
-      ssn: "",
-      scheduledoctor:"11111"
-    },
-   ];
-   db.emergency
-    .remove({})
-    .then(() => db.emergency.collection.insertMany(emergencySeed))
-    .then(data => {
-      console.log(data.result.n + " records inserted!");
-      process.exit(0);
-    })
-    .catch(err => {
-      console.error(err);
-      process.exit(1);
-    });
+ 
