@@ -28,6 +28,8 @@ db.Patient.collection.insertMany(patientSeed)
    console.error(err);
    process.exit(1);
  });
+
+
 const lifechathistorySeed = [
  {
    chathistory:"hello",
@@ -46,6 +48,7 @@ db.lifechathistory
    console.error(err);
    process.exit(1);
  });
+ 
  const emergencySeed = [
   {
     fullname: "TTT",
@@ -64,6 +67,28 @@ db.lifechathistory
  db.emergency
   .remove({})
   .then(() => db.emergency.collection.insertMany(emergencySeed))
+ 
+
+
+
+
+ 
+const profileSeed = [
+  {
+    name: "TTT",
+    email: "TTT@test.com",
+    password: "TTT",
+    phone: "1111111",
+    address: "1111111",
+    primaryDrInfo: "1111111",
+    insuranceInfo: "1111111",
+    ssn: ""
+  },
+ ];
+ db.profile
+  .remove({})
+  .then(() => db.profile.collection.insertMany(profileSeed))
+ 
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -71,4 +96,6 @@ db.lifechathistory
   .catch(err => {
     console.error(err);
     process.exit(1);
+ 
   });
+ 
