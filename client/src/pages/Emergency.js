@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import "date-fns";
+ 
 import API from "../utils/API";
 import Dashboard from "../components/Dashboard/dashboard";
 import LinearProgress from "@material-ui/core/LinearProgress";
@@ -76,7 +77,22 @@ export default function TextFields() {
     name: "",
     age: "",
     multiline: "Controlled",
-    showPassword: false
+    showPassword: false,
+    fullname: ""  ,
+    email: ""  ,
+    password: ""  ,
+    phonenumber: ""  ,
+    socialsecurity: ""  ,
+    personaladdress: ""  ,
+    scheduleddoctor: ""  ,
+    hospitaladdress: ""  ,
+    appointmentdate: ""  ,
+    appointmenttime: ""  ,
+    commentsone: ""  ,
+    commentstwo: ""  ,
+    symptoms: ""
+
+
   });
 
   const [open, setOpen] = React.useState(false);
@@ -85,12 +101,24 @@ export default function TextFields() {
     new Date("2019-01-01T12:00:00")
   );
 
-  const handleDateChange = date => {
-    setSelectedDate(date);
+  const handleDateChange =  date => {
+    console.log( date )
+    sessionStorage.setItem("appointmentdate",date.toString())
+
+    setValues({ ...values, "appointmentdate": date.toString() });
+    // setValues({ ...values, "appointmenttime": date.toString() });
+  };
+  const handleTimeChange = time => {
+    console.log( time )
+ 
+    setValues({ ...values, "appointmentdate": time.toString() });
+    // setValues({ ...values, "appointmenttime": date.toString() });
   };
 
   const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value });
+    console.log("name:",[name], "value:",event.target.value.toString())
+    sessionStorage.setItem(name,event.target.value.toString() )
+    setValues({ ...values, [name]: event.target.value.toString() });
   };
 
   const handleClickShowPassword = () => {
@@ -111,7 +139,49 @@ export default function TextFields() {
   };
 
   const handleOpen = () => {
+      // console.log(sessionStorage.getItem("fullname"))
+
+      // email: ""  ,
+      // password: ""  ,
+      // phonenumber: ""  ,
+      // socialsecurity: ""  ,
+      // personaladdress: ""  ,
+      // scheduleddoctor: ""  ,
+      // hospitaladdress: ""  ,
+      // appointmentdate: ""  ,
+      // appointmenttime: ""  ,
+      // commentsone: ""  ,
+      // commentstwo: ""  ,
+      // symptoms: ""
+
+    API.saveEmergency({
+  fullname: sessionStorage.getItem("fullname"),
+  email: sessionStorage.getItem("email"),
+  password: sessionStorage.getItem("password"),
+  phonenumber: sessionStorage.getItem("phonenumber"),
+  socialsecurity: sessionStorage.getItem("socialsecurity"),
+  personaladdress: sessionStorage.getItem("personaladdress"),
+  scheduleddoctor: sessionStorage.getItem("scheduleddoctor"),
+  hospitaladdress: sessionStorage.getItem("hospitaladdress"),
+  appointmentdate: sessionStorage.getItem("appointmentdate"),
+  appointmenttime: sessionStorage.getItem("appointmenttime"),
+  commentsone: sessionStorage.getItem("commentsone"),
+  commentstwo: sessionStorage.getItem("commentstwo") 
+    }).then(serverData=>{
+      
+      API.send_sms({
+        text:"Patient Name:"+ sessionStorage.getItem("fullname") + " Check-in:"+sessionStorage.getItem("appointmentdate")
+           
+           })
+           
+      console.log("it was sent")
+    })
+
+
     setOpen(true);
+    
+
+
   };
 
   const handleClose = () => {
@@ -134,8 +204,8 @@ export default function TextFields() {
             id="outlined-name"
             label="Full Name"
             className={classes.textField}
-            value={values.name}
-            onChange={handleChange("name")}
+            // value={values.name}
+            onChange={handleChange("fullname")}
             margin="normal"
             variant="outlined"
             InputProps={{
@@ -150,6 +220,7 @@ export default function TextFields() {
             required
             id="outlined-email-required"
             label="Email"
+            onChange={handleChange("email")}
             placeholder="abc@gmail.com"
             className={classes.textField}
             margin="normal"
@@ -181,7 +252,7 @@ export default function TextFields() {
               id="adornment-ssn"
               type={values.showSSN ? "text" : "password"}
               value={values.SSN}
-              onChange={handleChange("SSN")}
+              onChange={handleChange("socialsecurity")}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -200,6 +271,7 @@ export default function TextFields() {
             id="outlined-number-required"
             label="Phone Number"
             placeholder="555-555-555"
+            onChange={handleChange("phonenumber")}
             className={classes.textField}
             margin="normal"
             variant="outlined"
@@ -211,6 +283,7 @@ export default function TextFields() {
             placeholder="6868 Lane Rd."
             className={classes.textField}
             style={{ width: 400 }}
+            onChange={handleChange("personaladdress")}
             margin="normal"
             variant="outlined"
           />
@@ -220,6 +293,7 @@ export default function TextFields() {
             label="Scheduled Doctor"
             placeholder="First and Last Name"
             className={classes.textField}
+            onChange={handleChange("scheduleddoctor")}
             margin="normal"
             variant="outlined"
           />
@@ -228,6 +302,7 @@ export default function TextFields() {
             id="outlined-hospital-address-required"
             label="Hospital Address"
             placeholder="Hospital"
+            onChange={handleChange("hospitaladdress")}
             className={classes.textField}
             style={{ width: 400 }}
             margin="normal"
@@ -243,6 +318,7 @@ export default function TextFields() {
               id="date-picker-inline"
               label="Select Appointment Date"
               value={selectedDate}
+              // onChange={handleChange("appointmentdate")}
               onChange={handleDateChange}
               KeyboardButtonProps={{
                 "aria-label": "change date"
@@ -264,6 +340,7 @@ export default function TextFields() {
             id="outlined-service"
             label="What service are you requesting?"
             style={{ margin: 8 }}
+            onChange={handleChange("commentsone")}
             helperText="Medical care, recommendations, prescription, etc."
             fullWidth
             multiline={true}
@@ -278,6 +355,7 @@ export default function TextFields() {
           <TextField
             id="outlined-report"
             label="What would you like to report?"
+            onChange={handleChange("commentstwo")}
             style={{ margin: 8 }}
             helperText="Please describe what you may be feeling (symptoms, concerns, questions)."
             fullWidth

@@ -1,6 +1,11 @@
 import axios from "axios";
 
+
 export default {
+  send_sms: function (text) {
+    return axios.post("/api/sms", text);
+    
+  },
   // Gets all books
   getBooks: function () {
     return axios.get("/api/books");
@@ -16,6 +21,12 @@ export default {
   // Saves a book to the database
   saveBook: function (bookData) {
     return axios.post("/api/books", bookData);
+  },
+
+  // Saves a book to the database
+  saveEmergency: function (emergencyData) {
+    console.log(emergencyData)
+    return axios.post("/api/emergency", emergencyData);
   },
 
   getPatients: function () {
