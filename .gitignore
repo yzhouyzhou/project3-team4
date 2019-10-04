@@ -54,10 +54,10 @@ typings/
 *.tgz
 
 # Yarn Integrity file
-.yarn-integrity
+.yarn-integrity    
 
 # dotenv environment variables file
-#.env
+
 
 # next.js build output
 .next
