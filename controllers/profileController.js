@@ -5,7 +5,7 @@ module.exports = {
   findAll: function (req, res) {
     db.Patient
       .find(req.query)
-      .populate("lifechathistory")
+      .populate("patient")
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -13,7 +13,7 @@ module.exports = {
   findById: function (req, res) {
     db.Patient
       .findById(req.params.id)
-      .populate("lifechathistory")
+      .populate("patient")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -21,7 +21,7 @@ module.exports = {
     console.log("for login", req.query);
     db.Patient
       .findOne(req.query)
-      .populate("lifechathistory")
+      .populate("patient")
       .then(dbModel => {
         console.log("data", dbModel)
         res.json(dbModel)})
