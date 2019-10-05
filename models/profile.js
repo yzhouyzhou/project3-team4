@@ -41,4 +41,11 @@ const ProfileSchema = new mongoose.Schema({
 
 });
 
-module.exports = Profile = mongoose.model('profile', ProfileSchema);
+// This creates our model from the above schema, using mongoose's model method
+var profile = mongoose.model("profile", ProfileSchema);
+
+// Export the Article model
+module.exports = profile;
+
+
+ 
