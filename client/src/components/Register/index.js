@@ -19,12 +19,15 @@ class Register extends Component {
   };
 
   loadPatientByEmail = () => {
+    sessionStorage.removeItem("patientName");
     API.getPatientByEmail(this.state.email)
       .then(res => {
         console.log(res.data);
         this.setState({ patient: res.data });
         console.log("now", this.state.patient);
         this.setState({ registerStatus: true });
+        sessionStorage.setItem(
+          "patientName", this.state.patient.name);
       })
       .catch(err => console.log(err));
   };
@@ -126,7 +129,7 @@ class Register extends Component {
           <Redirect
             to={{
               pathname: "/home",
-              state: { patient: this.state.patient }
+              state: { patientName: this.state.patientName }
             }}
           />
         ) : (

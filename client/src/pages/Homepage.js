@@ -7,21 +7,21 @@ import APIC from "./colorApic.png";
 
 class Homepage extends Component {
   state = {
-    patient: this.props.location.state.patient
-      ? this.props.location.state.patient
-      : sessionStorage.getItem("patient")
+    patientName: this.props.location.state
+      ? this.props.location.state.patientName
+      : sessionStorage.getItem("patientName")
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
-    sessionStorage.setItem("patient", this.props.location.state.patient);
-    console.log(this.state.patient);
+    this.setState({patientName:sessionStorage.getItem("patientName")});
+    console.log(this.state.patientName);
   }
 
   render() {
     return (
       <div>
-        <Dashboard name={this.state.patient.name}></Dashboard>
+        <Dashboard name={this.state.patientName}></Dashboard>
         <Wrapper>
           <Container fixed>
             <Grid container spacing={3}>

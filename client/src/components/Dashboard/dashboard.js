@@ -107,7 +107,8 @@ export default function Dashboard(props) {
   //   setOpen(false);
   // };
   // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
+  const patientName = props.name ? props.name : sessionStorage.getItem("patientName");
+ 
   return (
     <div id="topBar" className="topBar">
       <div className={classes.root}>
@@ -150,7 +151,7 @@ export default function Dashboard(props) {
                 letterSpacing: "0.0538em"
               }}
             >
-              Dashboard    &nbsp;&nbsp;&nbsp;&nbsp;{props.name}&nbsp;&nbsp;&nbsp;&nbsp;     
+              Dashboard    &nbsp;&nbsp;&nbsp;&nbsp;{patientName}&nbsp;&nbsp;&nbsp;&nbsp;     
               <IconButton color="inherit">
                 <Badge badgeContent={0} color="secondary">
                   <NotificationsIcon />
