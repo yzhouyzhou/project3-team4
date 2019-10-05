@@ -115,7 +115,7 @@ export default function TextFields() {
     // commentsone: ""  ,
     // commentstwo: ""  ,
     // symptoms: ""
-alert("save")
+alert("New patient information saved!")
   API.saveProfile({
     name: sessionStorage.getItem("name"),
 email: sessionStorage.getItem("email"),
@@ -128,11 +128,8 @@ ssn: sessionStorage.getItem("ssn")
   }).then(serverData=>{
     
   
-    console.log("added")
+    console.log("Added New Account")
   })
-
-
- 
 
 };
 

@@ -11,7 +11,7 @@ import React from 'react';
           <div className="dialog">
             <form className="dialog-form" onSubmit={launchChat}>
               <label className="username-label" htmlFor="username">
-                Enter you username
+                Please enter your username:
               </label>
               <input
                 id="username"
