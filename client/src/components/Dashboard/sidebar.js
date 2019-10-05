@@ -67,7 +67,7 @@ export const mainListItems = (
         <ListItemText primary="Location"/>
         </NavLink>
     </ListItem>
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
@@ -84,6 +84,6 @@ export const mainListItems = (
       activeStyle={{ color: 'cyan'}}>
         <ListItemText primary="Notifications"/>
         </NavLink>
-    </ListItem>
+    </ListItem> */}
   </div>
 );
