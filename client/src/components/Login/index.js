@@ -15,6 +15,7 @@ class Login extends Component {
   };
 
   loadPatientByEmail = () => {
+    sessionStorage.removeItem("patientName");
     API.getPatientByEmail(this.state.email)
       .then(res => {
         console.log(res.data);
@@ -33,6 +34,11 @@ class Login extends Component {
         this.setState({ loginStatusStr: "Sorry, invalid user/password. Please try again." })
         :
         this.setState({ loginStatus: true });
+    if (this.state.loginStatus) {
+      sessionStorage.setItem(
+        "patientName", this.state.patient.name
+      );
+    }
   }
 
   handleInputChange = event => {
@@ -83,7 +89,8 @@ class Login extends Component {
         {this.state.loginStatus ?
           <Redirect to={{
             pathname: '/home',
-            state: { patient: this.state.patient }
+            state: { patientName: this.state.patientName },
+            refresh: true
           }}
           /> : ""
         }
