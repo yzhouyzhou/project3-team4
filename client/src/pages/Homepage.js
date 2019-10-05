@@ -59,8 +59,7 @@ class Homepage extends Component {
                     APIC (Assistance Processing Interface Compound) is an
                     application interface for patients needing immediate care
                     and utility services. Equipped with the latest technology,
-                    APIC allows users to connect directly to their Primary
-                    Providers' office and check in for emergency visits for your
+                    APIC allows users to connect directly to their physician's office and check in for emergency visits for your
                     help and convenience. Cut the line, save the wait. We
                     believe our community deserves the best Healthcare service
                     available.

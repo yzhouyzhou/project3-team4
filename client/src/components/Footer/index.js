@@ -6,8 +6,8 @@ import Button from "@material-ui/core/Button";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-copyright text-center py-3">© 2019 APIC
-      <Link to="/Patients/all">
+      <div className="footer-copyright text-center py-3">© 2019 APIC</div> 
+      {/* <Link to="/Patients/all">
         <Button
           variant="outlined"
           color="primary"
@@ -17,7 +17,7 @@ function Footer() {
         >
           Go To Patient List
         </Button>
-      </Link></div>
+      </Link>*/}
       {/* <Link to="/patients">
         <Button variant="outlined" color="primary">
           Go To Register

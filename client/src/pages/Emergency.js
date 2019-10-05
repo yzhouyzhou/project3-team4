@@ -171,7 +171,7 @@ export default function TextFields() {
         text:"Patient Name: "+ sessionStorage.getItem("fullname") +  " has checked-in for their appointment for " + sessionStorage.getItem("appointmentdate") + (" via the APIC App. Thank you for using APIC!")
            })
 
-      console.log("it was sent")
+      console.log("It was sent")
     })
 
 
