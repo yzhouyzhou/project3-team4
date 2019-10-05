@@ -1,7 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 import "date-fns";
- 
 import API from "../utils/API";
 import Dashboard from "../components/Dashboard/dashboard";
 import LinearProgress from "@material-ui/core/LinearProgress";
@@ -78,18 +77,18 @@ export default function TextFields() {
     age: "",
     multiline: "Controlled",
     showPassword: false,
-    fullname: ""  ,
-    email: ""  ,
-    password: ""  ,
-    phonenumber: ""  ,
-    socialsecurity: ""  ,
-    personaladdress: ""  ,
-    scheduleddoctor: ""  ,
-    hospitaladdress: ""  ,
-    appointmentdate: ""  ,
-    appointmenttime: ""  ,
-    commentsone: ""  ,
-    commentstwo: ""  ,
+    fullname: "",
+    email: "",
+    password: "",
+    phonenumber: "",
+    socialsecurity: "",
+    personaladdress: "",
+    scheduleddoctor: "",
+    hospitaladdress: "",
+    appointmentdate: "",
+    appointmenttime: "",
+    commentsone: "",
+    commentstwo: "",
     symptoms: ""
   });
 
@@ -99,23 +98,23 @@ export default function TextFields() {
     new Date("2019-01-01T12:00:00")
   );
 
-  const handleDateChange =  date => {
-    console.log( date )
-    sessionStorage.setItem("appointmentdate",date.toString())
+  // const handleDateChange =  date => {
+  //   console.log( date )
+  //   sessionStorage.setItem("appointmentdate",date.toString())
 
-    setValues({ ...values, "appointmentdate": date.toString() });
-    // setValues({ ...values, "appointmenttime": date.toString() });
-  };
-  const handleTimeChange = time => {
-    console.log( time )
- 
-    setValues({ ...values, "appointmentdate": time.toString() });
-    // setValues({ ...values, "appointmenttime": date.toString() });
-  };
+  //   setValues({ ...values, "appointmentdate": date.toString() });
+  //   // setValues({ ...values, "appointmenttime": date.toString() });
+  // };
+  // const handleTimeChange = time => {
+  //   console.log( time )
+
+  //   setValues({ ...values, "appointmentdate": time.toString() });
+  //   // setValues({ ...values, "appointmenttime": date.toString() });
+  // };
 
   const handleChange = name => event => {
-    console.log("name:",[name], "value:",event.target.value.toString())
-    sessionStorage.setItem(name,event.target.value.toString() )
+    console.log("name:", [name], "value:", event.target.value.toString());
+    sessionStorage.setItem(name, event.target.value.toString());
     setValues({ ...values, [name]: event.target.value.toString() });
   };
 
@@ -137,48 +136,48 @@ export default function TextFields() {
   };
 
   const handleOpen = () => {
-      // console.log(sessionStorage.getItem("fullname"))
+    // console.log(sessionStorage.getItem("fullname"))
 
-      // email: ""  ,
-      // password: ""  ,
-      // phonenumber: ""  ,
-      // socialsecurity: ""  ,
-      // personaladdress: ""  ,
-      // scheduleddoctor: ""  ,
-      // hospitaladdress: ""  ,
-      // appointmentdate: ""  ,
-      // appointmenttime: ""  ,
-      // commentsone: ""  ,
-      // commentstwo: ""  ,
-      // symptoms: ""
+    // email: ""  ,
+    // password: ""  ,
+    // phonenumber: ""  ,
+    // socialsecurity: ""  ,
+    // personaladdress: ""  ,
+    // scheduleddoctor: ""  ,
+    // hospitaladdress: ""  ,
+    // appointmentdate: ""  ,
+    // appointmenttime: ""  ,
+    // commentsone: ""  ,
+    // commentstwo: ""  ,
+    // symptoms: ""
 
     API.saveEmergency({
-  fullname: sessionStorage.getItem("fullname"),
-  email: sessionStorage.getItem("email"),
-  password: sessionStorage.getItem("password"),
-  phonenumber: sessionStorage.getItem("phonenumber"),
-  socialsecurity: sessionStorage.getItem("socialsecurity"),
-  personaladdress: sessionStorage.getItem("personaladdress"),
-  scheduleddoctor: sessionStorage.getItem("scheduleddoctor"),
-  hospitaladdress: sessionStorage.getItem("hospitaladdress"),
-  appointmentdate: sessionStorage.getItem("appointmentdate"),
-  appointmenttime: sessionStorage.getItem("appointmenttime"),
-  commentsone: sessionStorage.getItem("commentsone"),
-  commentstwo: sessionStorage.getItem("commentstwo") 
-    }).then(serverData=>{
-      
+      fullname: sessionStorage.getItem("fullname"),
+      email: sessionStorage.getItem("email"),
+      password: sessionStorage.getItem("password"),
+      phonenumber: sessionStorage.getItem("phonenumber"),
+      socialsecurity: sessionStorage.getItem("socialsecurity"),
+      personaladdress: sessionStorage.getItem("personaladdress"),
+      scheduleddoctor: sessionStorage.getItem("scheduleddoctor"),
+      hospitaladdress: sessionStorage.getItem("hospitaladdress"),
+      appointmentdate: sessionStorage.getItem("appointmentdate"),
+      appointmenttime: sessionStorage.getItem("appointmenttime"),
+      commentsone: sessionStorage.getItem("commentsone"),
+      commentstwo: sessionStorage.getItem("commentstwo")
+    }).then(serverData => {
       API.send_sms({
-        text:"Patient Name: "+ sessionStorage.getItem("fullname") +  " has checked-in for their appointment for " + sessionStorage.getItem("appointmentdate") + (" via the APIC App. Thank you for using APIC!")
-           })
+        text:
+          "Patient Name: " +
+          sessionStorage.getItem("fullname") +
+          " has checked-in for their appointment for " +
+          sessionStorage.getItem("appointmentdate") +
+          " via the APIC App. Thank you for using APIC!"
+      });
 
-      console.log("It was sent")
-    })
-
+      console.log("It was sent");
+    });
 
     setOpen(true);
-    
-
-
   };
 
   const handleClose = () => {
@@ -305,7 +304,18 @@ export default function TextFields() {
             margin="normal"
             variant="outlined"
           />
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <TextField
+            id="datetime-local"
+            label="Select Appointment Date"
+            type="datetime-local"
+            defaultValue="2019-01-01T12:00"
+            onChange={handleChange("appointmentdate")}
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true
+            }}
+          />
+          {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker
               className={clsx(classes.margin, classes.textField)}
               disableToolbar
@@ -331,8 +341,8 @@ export default function TextFields() {
               KeyboardButtonProps={{
                 "aria-label": "change time"
               }}
-            />
-          </MuiPickersUtilsProvider>
+            /> */}
+          {/* </MuiPickersUtilsProvider> */}
           <TextField
             id="outlined-service"
             label="What service are you requesting?"
