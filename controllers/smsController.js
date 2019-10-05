@@ -10,7 +10,7 @@ module.exports = {
   findAll: function(req, res) {
   console.log(req.body)
     twilioClient.messages.create({
-      to: '+18475712871',
+      to: '+17082289758',
       from: '+15203415491',
       body: req.body.text
     }).then(message => {
