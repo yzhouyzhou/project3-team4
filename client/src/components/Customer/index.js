@@ -68,10 +68,10 @@ import React, { Component } from "react";
           alert("Invalid user ID");
         } else {
           axios
-            .post("http://localhost:3001/users", { userId })
+            .post("/users", { userId })
             .then(() => {
               const tokenProvider = new Chatkit.TokenProvider({
-                url: "http://localhost:3001/authenticate"
+                url: "/authenticate"
               });
 
               const chatManager = new Chatkit.ChatManager({
