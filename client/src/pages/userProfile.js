@@ -67,11 +67,21 @@ export default function TextFields() {
     name: "",
     age: "",
     multiline: "Controlled",
-    showPassword: false
+    showPassword: false,
+    name: ""  ,
+    email: ""  ,
+    password: ""  ,
+    phone: ""  ,
+    address: ""  ,
+    primaryDrInfo: ""  ,
+    insuranceInfo: ""  ,
+    ssn: ""   
   });
 
   const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value });
+    console.log("name:",[name], "value:",event.target.value.toString())
+    sessionStorage.setItem(name,event.target.value.toString() )
+    setValues({ ...values, [name]: event.target.value.toString() });
   };
 
   const handleClickShowPassword = () => {
@@ -88,6 +98,43 @@ export default function TextFields() {
   const handleMouseDownSSN = event => {
     event.preventDefault();
   };
+
+
+  const handleOpen = () => {
+    // console.log(sessionStorage.getItem("fullname"))
+
+    // email: ""  ,
+    // password: ""  ,
+    // phonenumber: ""  ,
+    // socialsecurity: ""  ,
+    // personaladdress: ""  ,
+    // scheduleddoctor: ""  ,
+    // hospitaladdress: ""  ,
+    // appointmentdate: ""  ,
+    // appointmenttime: ""  ,
+    // commentsone: ""  ,
+    // commentstwo: ""  ,
+    // symptoms: ""
+alert("save")
+  API.saveProfile({
+    name: sessionStorage.getItem("name"),
+email: sessionStorage.getItem("email"),
+password: sessionStorage.getItem("password"),
+phone: sessionStorage.getItem("phone"),
+address: sessionStorage.getItem("address"),
+primaryDrInfo: sessionStorage.getItem("primaryDrInfo"),
+insuranceInfo: sessionStorage.getItem("insuranceInfo"),
+ssn: sessionStorage.getItem("ssn") 
+  }).then(serverData=>{
+    
+  
+    console.log("added")
+  })
+
+
+ 
+
+};
 
   return (
     <div>
@@ -119,6 +166,7 @@ export default function TextFields() {
             className={classes.textField}
             margin="normal"
             variant="outlined"
+            onChange={handleChange("email")}
           />
           <FormControl className={clsx(classes.margin, classes.textField)}>
             <InputLabel htmlFor="adornment-password">Password</InputLabel>
@@ -146,7 +194,7 @@ export default function TextFields() {
               id="adornment-ssn"
               type={values.showSSN ? "text" : "password"}
               value={values.SSN}
-              onChange={handleChange("SSN")}
+              onChange={handleChange("ssn")}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -168,6 +216,7 @@ export default function TextFields() {
             className={classes.textField}
             margin="normal"
             variant="outlined"
+            onChange={handleChange("phone")}
           />
           <TextField
             required
@@ -178,6 +227,7 @@ export default function TextFields() {
             style={{ width: 400 }}
             margin="normal"
             variant="outlined"
+            onChange={handleChange("address")}
           />
           <TextField
             required
@@ -188,6 +238,7 @@ export default function TextFields() {
             style={{ width: 250 }}
             margin="normal"
             variant="outlined"
+            onChange={handleChange("primaryDrInfo")}
           />
           <TextField
             required
@@ -198,11 +249,13 @@ export default function TextFields() {
             style={{ width: 400 }}
             margin="normal"
             variant="outlined"
+            onChange={handleChange("insuranceInfo")}
           />
           <Button
             variant="contained"
             color="primary"
             className={classes.button}
+            onClick={handleOpen}
           >
             Update Information
             <Icon className={classes.rightIcon}>send</Icon>

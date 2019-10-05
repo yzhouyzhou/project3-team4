@@ -26,7 +26,7 @@ class Login extends Component {
   };
 
   verifyPassword = () => {
-    //console.log(this.state.patient.password,  this.state.password);
+    console.log(this.state.patient.password,  this.state.password);
     (!this.state.patient) ?
       this.setState({ loginStatusStr: "Sorry, invalid user/password. Please try again." })
       : (this.state.patient.password !== this.state.password) ?
