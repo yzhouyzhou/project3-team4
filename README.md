@@ -1,12 +1,14 @@
 # APIC 
 
 ## Overview
-Advance Processing Information Compound 
+Assistance Processing Information Compound 
 
 #### Technologies 
 * React
 * Node.js
 * MongoDB
+* Twilio
+* Pusher ChatKit
 * Material UI
 * Bootstrap
 * Mongoose
@@ -17,6 +19,8 @@ Advance Processing Information Compound
 * Various Other NPM Packages
 
 #### Future Development
+* Notifications section
+* Reports section
 
 #### Team
 * Adina Cianciotto
