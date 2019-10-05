@@ -104,7 +104,7 @@ class Register extends Component {
             value={this.state.ssn}
             onChange={this.handleInputChange}
             name="ssn"
-            placeholder="SSN"
+            placeholder="Social Security Number"
           />
           <Input
             required

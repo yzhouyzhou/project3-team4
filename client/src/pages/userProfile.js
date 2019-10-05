@@ -185,6 +185,7 @@ export default function TextFields() {
             label="Doctor's Phone Number"
             placeholder=""
             className={classes.textField}
+            style={{ width: 250 }}
             margin="normal"
             variant="outlined"
           />
