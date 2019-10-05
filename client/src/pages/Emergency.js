@@ -89,7 +89,6 @@ export default function TextFields() {
     appointmenttime: "",
     commentsone: "",
     commentstwo: "",
-    symptoms: ""
   });
 
   const [open, setOpen] = React.useState(false);
@@ -137,20 +136,6 @@ export default function TextFields() {
 
   const handleOpen = () => {
     // console.log(sessionStorage.getItem("fullname"))
-
-    // email: ""  ,
-    // password: ""  ,
-    // phonenumber: ""  ,
-    // socialsecurity: ""  ,
-    // personaladdress: ""  ,
-    // scheduleddoctor: ""  ,
-    // hospitaladdress: ""  ,
-    // appointmentdate: ""  ,
-    // appointmenttime: ""  ,
-    // commentsone: ""  ,
-    // commentstwo: ""  ,
-    // symptoms: ""
-
     API.saveEmergency({
       fullname: sessionStorage.getItem("fullname"),
       email: sessionStorage.getItem("email"),
