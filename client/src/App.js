@@ -18,11 +18,11 @@ import Reports from "./pages/Reports";
 import Customer from "./components/Customer";
 import Support from "./components/Support";
 import PatientLogin from "./pages/PatientLogin";
-// import Wrapper from "../src/components/Wrapper";
-// import "./normalize.css";
-// import "./skeleton.css";
-// import "./App.css";
-//apply to component style.css
+import './normalize.css';
+import './skeleton.css';
+
+import './App.css';
+
 
 function App() {
   return (
