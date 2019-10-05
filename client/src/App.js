@@ -18,9 +18,8 @@ import Reports from "./pages/Reports";
 import Customer from "./components/Customer";
 import Support from "./components/Support";
 import PatientLogin from "./pages/PatientLogin";
-import './normalize.css';
-import './skeleton.css';
-
+// import './normalize.css';
+// import './skeleton.css';
 import './App.css';
 
 

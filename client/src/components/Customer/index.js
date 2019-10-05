@@ -4,6 +4,7 @@ import React, { Component } from "react";
     import Spinner from "react-spinkit";
     import Dialog from "../Dialog";
     import ChatWidget from "../ChatWidget";
+    import Jumbotron from "../Jumbotron"
     import { handleInput, sendMessage, connectToRoom } from "../../sharedMethods";
  
     class Customer extends Component {
@@ -64,7 +65,7 @@ import React, { Component } from "react";
         const { userId } = this.state;
 
         if (userId === null || userId.trim() === "") {
-          alert("Invalid userId");
+          alert("Invalid user ID");
         } else {
           axios
             .post("/users", { userId })
@@ -107,9 +108,10 @@ import React, { Component } from "react";
 
          
         return (
+          <Jumbotron>
           <div className="customer-chat">
-            <h1>APIC Support</h1>
-            <p>Need help? Chat with us</p>
+            <h1>APIC Live Chat Support</h1>
+            <p>Need help? Chat with us!</p>
 
             {currentRoom ? (
               <ChatWidget
@@ -135,6 +137,7 @@ import React, { Component } from "react";
               />
             ) : null}
           </div>
+          </Jumbotron>
         );
       }
     }
