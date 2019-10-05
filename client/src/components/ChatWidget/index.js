@@ -13,7 +13,7 @@ import React from "react";
         <section className="chat">
           <div className="chat-widget">
             <header className="chat-header">
-              <h2>Got Questions? Chat with us</h2>
+              <h2>Got Questions? Chat with us!</h2>
             </header>
             <section className="chat-body">{ChatSession}</section>
 

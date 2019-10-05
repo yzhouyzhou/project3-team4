@@ -1,5 +1,3 @@
- 
-
 require("dotenv").config({ path: ".env" });
 const accountSid = process.env.ACCOUNTSID;
 const authToken =  process.env.AUTHTOKEN ;
@@ -9,9 +7,7 @@ console.log(accountSid)
 // Defining methods for the booksController
 module.exports = {
 
-
   findAll: function(req, res) {
-  
   console.log(req.body)
     twilioClient.messages.create({
       to: '+17082289758',

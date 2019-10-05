@@ -91,8 +91,6 @@ export default function TextFields() {
     commentsone: ""  ,
     commentstwo: ""  ,
     symptoms: ""
-
-
   });
 
   const [open, setOpen] = React.useState(false);
@@ -170,11 +168,10 @@ export default function TextFields() {
     }).then(serverData=>{
       
       API.send_sms({
-        text:"Patient Name:"+ sessionStorage.getItem("fullname") + " Check-in:"+sessionStorage.getItem("appointmentdate")
-           
+        text:"Patient Name: "+ sessionStorage.getItem("fullname") +  " has checked-in for their appointment for " + sessionStorage.getItem("appointmentdate") + (" via the APIC App. Thank you for using APIC!")
            })
-           
-      console.log("it was sent")
+
+      console.log("It was sent")
     })
 
 
