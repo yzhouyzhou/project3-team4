@@ -1,7 +1,7 @@
 import React, { Component } from "react";
     import axios from "axios";
     import Chatkit from "@pusher/chatkit-client";
-    import { sendMessage, handleInput, connectToRoom } from "../SharedMethod";
+    import { sendMessage, handleInput, connectToRoom } from "../../sharedMethods";
 
     import "./Support.css";
 
@@ -23,6 +23,7 @@ import React, { Component } from "react";
 
       componentDidMount() {
         const userId = "support";
+
         axios
           .post("/users", { userId })
           .then(() => {
