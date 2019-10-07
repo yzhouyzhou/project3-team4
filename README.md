@@ -1,7 +1,11 @@
 # APIC 
+![Logo](APIC.png)
 
 ## Overview
 Assistance Processing Information Compound 
+
+## Emergency Demo
+![ChatDemo](Chat.jpg)
 
 #### Technologies 
 * React
