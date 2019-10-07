@@ -5,7 +5,7 @@
 Assistance Processing Information Compound 
 
 ## Emergency Demo
-![ChatDemo](ChatTxt.jpg)
+![ChatDemo](Chat.jpg)
 
 #### Technologies 
 * React
