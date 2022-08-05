@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "google-map-react": "^1.1.5",
     "if-env": "^1.0.4",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "prop-types": "^15.7.2",
     "react": "^16.6.3",
     "react-bootstrap": "^1.0.0-beta.12",
